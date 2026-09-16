@@ -34,15 +34,15 @@ Use this in the final 2–3 hours. Do not start new deep topics.
 - Security
 - Operations
 
-CAF = organization transformation.  
+CAF = organizational transformation/readiness.  
 Well-Architected = workload best practices.
 
 # Global infrastructure
 - Region = geographic AWS area
 - AZ = separate failure domain inside Region
 - Edge = close to users/content delivery
-- Multi-AZ = high availability
-- Multi-Region = DR/global latency/data sovereignty/business continuity
+- Multi-AZ = high availability/resilience
+- Multi-Region = DR/regional resilience/global latency/data sovereignty
 
 # Core cloud concepts
 - scale UP = bigger machine
@@ -65,13 +65,28 @@ RDS/Lambda: AWS manages more underlying platform.
 
 # IAM
 - User = identity
-- Group = users grouped
+- Group = collection of users
 - Role = assumable identity / temporary credentials
 - Policy = permissions
+- AWS managed policy = AWS creates/maintains, reusable
+- Customer managed policy = customer creates/edits, reusable
+- Inline policy = embedded in one identity
 - least privilege
-- protect root, MFA, don't use routinely
+- protect root, use MFA, do not use routinely
+- IAM credential report = IAM user password/access-key/MFA status
+- IAM password policy = complexity/rotation rules for IAM-user passwords
 - Identity Center = workforce multi-account access
+- Federation = external IdP / temporary AWS access
 - Cognito = application end users
+
+## Root-only task examples
+For standalone accounts, recognize examples such as:
+- change root email/password/access keys
+- close the account
+- restore IAM admin permissions after lockout
+- activate IAM access to Billing and Cost Management
+
+Organizations can centrally perform some privileged actions for member accounts.
 
 # Security rapid map
 - CloudWatch = metrics/logs/alarms
@@ -89,7 +104,8 @@ RDS/Lambda: AWS manages more underlying platform.
 - Firewall Manager = centrally manage firewall policies
 - KMS = encryption keys
 - CloudHSM = dedicated HSM
-- Secrets Manager = credentials/secrets
+- Secrets Manager = credentials/secrets, especially rotation/dedicated secret management
+- Parameter Store = configuration/key-value parameters, SecureString option
 - ACM = TLS certificates
 
 # Compute
@@ -98,7 +114,7 @@ RDS/Lambda: AWS manages more underlying platform.
 - ELB = distribute traffic
 - Auto Scaling = change capacity
 - ECR = container images
-- ECS = AWS containers
+- ECS = AWS-native containers
 - EKS = Kubernetes
 - Fargate = serverless containers
 - Batch = batch jobs
@@ -106,11 +122,17 @@ RDS/Lambda: AWS manages more underlying platform.
 - Lightsail = simple VPS/apps
 - Outposts = AWS on premises
 
+# One-time vs repeatable operations
+- one-time visual/manual task -> Console can fit
+- repeatable script/API operation -> CLI / SDK / API
+- repeatable infrastructure definition -> CloudFormation / IaC
+
 # Storage
 - S3 = object
 - EBS = block/disk
 - EFS = shared file
-- FSx = specialized file
+- Instance Store = ephemeral host-attached block
+- FSx = specialized managed file
 - Glacier = archive
 - Storage Gateway = hybrid storage
 - Backup = centralized backups
@@ -159,7 +181,7 @@ RDS/Lambda: AWS manages more underlying platform.
 - Translate = translation
 - Rekognition = image/video
 - Textract = document extraction
-- Amazon Q = generative AI assistant family
+- Amazon Q = generative-AI assistant family
 
 # Integration
 - SQS = queue
@@ -171,14 +193,23 @@ RDS/Lambda: AWS manages more underlying platform.
 
 # Management
 - CloudFormation = IaC
-- Systems Manager = fleet/operations
+- Systems Manager = fleet/operations + Parameter Store
 - Compute Optimizer = rightsizing recommendations
 - Trusted Advisor = broad best-practice checks
 - Health Dashboard = AWS events affecting account/resources
-- Organizations = multi-account + billing + SCP
+- Organizations = multi-account + billing + SCPs
 - Control Tower = governed multi-account landing zone
 - Service Catalog = approved deployable products
 - Service Quotas = limits
+- License Manager = software-license tracking
+- X-Ray = distributed tracing
+
+# End-user/frontend recognition
+- WorkSpaces = cloud virtual desktop
+- AppStream 2.0 = stream applications
+- WorkSpaces Secure Browser = secure browser access
+- Amplify = frontend/mobile development/hosting platform
+- AppSync = managed GraphQL + real-time sync
 
 # Migration
 - Discovery Service = discover environment
@@ -192,14 +223,49 @@ RDS/Lambda: AWS manages more underlying platform.
 # Billing
 - On-Demand = flexible/no commitment
 - RI/Savings Plans = predictable commitment discount
-- Spot = interruptible/cheap
+- Spot = interruptible/low cost
 - Dedicated Host = physical host/licensing
-- Capacity Reservation = guarantee AZ capacity
+- Dedicated Instance = dedicated hardware, less host control
+- Capacity Reservation = guarantee capacity; not inherently a discount
+
+## Reserved Instance traps
+- Standard RI = less exchange flexibility
+- Convertible RI = exchange for different Convertible config of equal/higher value
+- Regional RI = discount across AZs in Region; no capacity reservation; eligible size flexibility
+- Zonal RI = capacity reservation in one AZ; no AZ/size flexibility
+- Organizations can share eligible RI/Savings Plans **discount benefits** according to billing settings
+- discount sharing != automatically sharing a zonal RI's capacity reservation
+
+# Cost tools
 - Pricing Calculator = estimate
 - Cost Explorer = analyze
 - Budgets = alert
 - CUR = detailed billing data
-- cost allocation tags = split costs by project/team
+- cost allocation tags = AWS-generated or user-defined; activate for supported cost reporting
+
+# Support and customer resources
+- Documentation = official product docs
+- re:Post = community Q&A
+- Prescriptive Guidance = patterns/strategies
+- Support Center = support cases
+- Trusted Advisor = best-practice recommendations
+- Health Dashboard / AWS Health = AWS events affecting your resources/account
+- Trust & Safety = report abuse/misuse
+- Marketplace = third-party software/data/services procurement
+- APN = consulting/technology partner ecosystem
+- ISV = software vendor
+- system integrator/consulting partner = implementation/migration help
+- Professional Services = AWS experts for transformations/complex engagements
+- Solutions Architects = AWS technical solution guidance
+
+## 2026 Support-plan transition
+Current live plans:
+- Basic
+- Business Support+
+- Enterprise Support
+- Unified Operations
+
+The CLF-C02 Domain 4 page still names legacy/transitional plans such as Developer Support, Business Support and Enterprise On-Ramp. Those legacy plans are scheduled to retire January 1, 2027. Recognize both generations of terminology; do not memorize every price table.
 
 # Final trap list
 
@@ -207,9 +273,12 @@ If question says...
 - “who changed?” -> CloudTrail
 - “CPU alert?” -> CloudWatch
 - “configuration compliant?” -> Config
+- “IAM users with MFA/stale access keys?” -> IAM credential report
 - “sensitive PII in S3?” -> Macie
 - “DDoS?” -> Shield
 - “SQL injection/web requests?” -> WAF
+- “app config parameter?” -> Parameter Store
+- “rotating DB secret?” -> Secrets Manager
 - “queue?” -> SQS
 - “fan-out?” -> SNS
 - “route events?” -> EventBridge
@@ -233,6 +302,10 @@ If question says...
 - “estimate cost?” -> Pricing Calculator
 - “past spend?” -> Cost Explorer
 - “budget alert?” -> Budgets
+- “external AWS partner?” -> APN
+- “third-party software?” -> Marketplace
+- “AWS incident affects my resources?” -> Health Dashboard
+- “report abuse?” -> Trust & Safety
 
 # Exam behavior
 - Read the requirement before the story.
