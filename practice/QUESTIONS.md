@@ -1,6 +1,11 @@
 # CLF-C02 50-Question High-Yield Mock
 
-These are **original practice questions**, not real/dumped AWS exam questions. They are designed around the official CLF-C02 task statements and approximate domain weighting.
+These are **original practice questions**, not real/dumped AWS exam questions. The 50 scored-style questions mirror the official domain weighting exactly:
+
+- Domain 1: 12 questions = 24%
+- Domain 2: 15 questions = 30%
+- Domain 3: 17 questions = 34%
+- Domain 4: 6 questions = 12%
 
 Suggested time: **70 minutes** for 50 questions.
 
@@ -8,7 +13,7 @@ Do not open `ANSWERS.md` until you finish.
 
 ---
 
-# Domain 1 — Cloud Concepts
+# Domain 1 — Cloud Concepts (Questions 1–12)
 
 ## 1
 A retailer automatically increases application capacity during a flash sale and reduces it when traffic returns to normal. Which cloud characteristic is demonstrated?
@@ -109,7 +114,7 @@ D. AWS Support Center
 
 ---
 
-# Domain 2 — Security & Compliance
+# Domain 2 — Security & Compliance (Questions 13–27)
 
 ## 13
 Under the AWS Shared Responsibility Model, who is responsible for patching the guest operating system on an Amazon EC2 instance?
@@ -234,7 +239,7 @@ E. Disable IAM entirely
 
 ---
 
-# Domain 3 — Cloud Technology & Services
+# Domain 3 — Cloud Technology & Services (Questions 28–44)
 
 ## 28
 Which option provides virtual servers with operating-system-level control?
@@ -372,7 +377,65 @@ B. Amazon CloudFront
 C. AWS VPN  
 D. Amazon VPC
 
+---
+
+# Domain 4 — Billing, Pricing & Support (Questions 45–50)
+
 ## 45
+A solutions team is designing a new AWS workload and wants to estimate its expected monthly cost before deployment. Which tool should it use?
+
+A. AWS Cost Explorer  
+B. AWS Pricing Calculator  
+C. AWS Budgets  
+D. AWS Cost and Usage Report
+
+## 46
+A finance team wants to analyze AWS spending trends over the previous six months. Which tool is MOST appropriate?
+
+A. AWS Cost Explorer  
+B. AWS Pricing Calculator  
+C. AWS Artifact  
+D. AWS Service Catalog
+
+## 47
+A company wants an alert when monthly AWS spend reaches 80% of a defined limit. Which service should it use?
+
+A. AWS Budgets  
+B. AWS Cost Explorer  
+C. Amazon CloudWatch only  
+D. AWS Marketplace
+
+## 48
+A batch-processing workload can tolerate interruptions and needs the lowest-cost EC2 capacity option. Which purchasing option is MOST appropriate?
+
+A. On-Demand Instances  
+B. Spot Instances  
+C. Dedicated Hosts  
+D. Capacity Reservations
+
+## 49
+A company must ensure that EC2 capacity is available for a workload in a specific Availability Zone. Which option addresses this requirement directly?
+
+A. Savings Plans  
+B. Spot Instances  
+C. Capacity Reservation  
+D. S3 Intelligent-Tiering
+
+## 50
+A company has software licensing requirements tied to physical server sockets and cores and needs visibility/control of the underlying EC2 host. Which option is MOST appropriate?
+
+A. Dedicated Host  
+B. Dedicated Instance  
+C. Spot Instance  
+D. Savings Plan
+
+---
+
+# Bonus Domain 3 service drill
+
+These six are extra because they are high-value service distinctions that did not fit the exact 50-question weighting.
+
+## B1
 Which network service provides a dedicated private connection from a company’s network to AWS?
 
 A. AWS Direct Connect  
@@ -380,7 +443,7 @@ B. AWS Client VPN
 C. Amazon CloudFront  
 D. AWS PrivateLink
 
-## 46 — Select TWO
+## B2 — Select TWO
 Which TWO statements are correct?
 
 A. Security groups are stateful.  
@@ -389,7 +452,7 @@ C. Network ACLs operate at the subnet level.
 D. Security groups are primarily DNS services.  
 E. Route 53 is a firewall.
 
-## 47
+## B3
 Which service should be used when a producer needs to place messages in a queue so a consumer can process them later?
 
 A. Amazon SNS  
@@ -397,7 +460,7 @@ B. Amazon SQS
 C. Amazon EventBridge  
 D. AWS Step Functions
 
-## 48
+## B4
 Which service is MOST appropriate for fan-out publish/subscribe notifications to multiple subscribers?
 
 A. Amazon SQS  
@@ -405,7 +468,7 @@ B. Amazon SNS
 C. AWS Step Functions  
 D. Amazon EBS
 
-## 49
+## B5
 Which AI service converts speech to text?
 
 A. Amazon Polly  
@@ -413,25 +476,12 @@ B. Amazon Transcribe
 C. Amazon Translate  
 D. Amazon Rekognition
 
-## 50
+## B6
 A company needs to extract text, forms, and tables from scanned documents. Which service is MOST appropriate?
 
 A. Amazon Rekognition  
 B. Amazon Textract  
 C. Amazon Comprehend  
 D. Amazon Lex
-
----
-
-# Bonus Domain 4 drill
-
-The mock above is intentionally service/security heavy because of the official weighting. Before stopping, answer these six orally:
-
-1. Estimate proposed AWS architecture cost?  
-2. Analyze historical spend?  
-3. Alert when cost reaches a threshold?  
-4. Cheapest interruptible EC2 capacity?  
-5. Guarantee EC2 capacity in a specific AZ?  
-6. Physical EC2 host for server-bound licensing?
 
 Check `ANSWERS.md` only after completing the mock.
