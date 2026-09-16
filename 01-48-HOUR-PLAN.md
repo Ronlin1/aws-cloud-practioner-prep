@@ -1,21 +1,38 @@
 # 01 — 48-Hour CLF-C02 Study Plan
 
-You do **not** have time for broad AWS learning. The objective is to build exam recognition quickly, then spend a large fraction of time on questions.
+You do **not** have time for broad AWS learning. The objective is to build exam recognition quickly, validate gaps with official questions, and spend the remaining time only on weak areas.
 
 ## Strategy
 
-Prioritize by weight:
+Prioritize by official weight:
 
 1. **Domain 3: Technology & Services — 34%**
 2. **Domain 2: Security & Compliance — 30%**
 3. **Domain 1: Cloud Concepts — 24%**
 4. **Domain 4: Billing/Pricing/Support — 12%**
 
-That means 64% of scored content comes from Domains 2 and 3.
+That means **64% of scored content comes from Domains 2 and 3**.
 
-## Day 1 — Build the map
+## Before the main study blocks — 30 to 45 min
 
-### Block 1 — 60–90 min: Blueprint + cloud concepts
+Use the current AWS prep flow:
+1. Skim the official exam guide.
+2. Take the **AWS Certification Official Pretest** if available in your Skill Builder account.
+3. Record the domains where you are weak.
+
+Do not spend equal time everywhere after this. The point of the pretest is to make the next 48 hours targeted.
+
+Official certification page:
+https://aws.amazon.com/certification/certified-cloud-practitioner/
+
+Skill Builder exam prep hub:
+https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02
+
+---
+
+# Day 1 — Build the exam map
+
+## Block 1 — 60–90 min: Blueprint + cloud concepts
 Read:
 - `00-EXAM-BLUEPRINT.md`
 - `02-DOMAIN-1-CLOUD-CONCEPTS.md`
@@ -29,7 +46,7 @@ Master:
 - fixed vs variable costs
 - rightsizing, economies of scale, automation
 
-### Block 2 — 2.5–3 h: Security
+## Block 2 — 2.5–3 h: Security
 Read:
 - `03-DOMAIN-2-SECURITY-COMPLIANCE.md`
 - security comparisons in `07-CONFUSING-SERVICES-EXAM-TRAPS.md`
@@ -37,14 +54,17 @@ Read:
 Master first:
 - Shared Responsibility: EC2 vs RDS vs Lambda
 - IAM user/group/role/policy
+- managed vs customer-managed policies at recognition level
 - least privilege, MFA, root user
+- root-only task examples
 - CloudWatch vs CloudTrail vs Config
 - GuardDuty vs Inspector vs Macie vs Security Hub vs Detective
 - WAF vs Shield
 - KMS vs CloudHSM vs Secrets Manager vs ACM
-- Artifact and compliance
+- Artifact and Audit Manager
+- Secrets Manager vs Systems Manager Parameter Store at recognition level
 
-### Block 3 — 3–4 h: Core services
+## Block 3 — 3–4 h: Core services
 Read the core half of `04-DOMAIN-3-TECHNOLOGY-SERVICES.md`.
 
 Master:
@@ -54,7 +74,7 @@ Master:
 - RDS, Aurora, DynamoDB, ElastiCache, Redshift
 - VPC, Route 53, CloudFront, Direct Connect, VPN, API Gateway
 
-### Block 4 — 90 min: Service recognition
+## Block 4 — 90 min: Service recognition
 Read `06-SERVICE-CHEAT-SHEET.md` twice.
 
 Method:
@@ -63,8 +83,10 @@ Method:
 - Say the service aloud within 3 seconds.
 - If you cannot, mark it weak.
 
-### Block 5 — 45–60 min: Official question set
-Take the AWS Official Practice Question Set.
+## Block 5 — 45–60 min: Official question set
+Take the **AWS Certification Official Practice Question Set** through the current Cloud Practitioner certification page or Skill Builder exam-prep hub.
+
+AWS currently describes the free Official Practice Question Set as **20 exam-style questions with detailed feedback**.
 
 Do NOT merely record score. For every miss, classify it:
 - didn't know service
@@ -72,15 +94,26 @@ Do NOT merely record score. For every miss, classify it:
 - misread keyword
 - pricing/support knowledge gap
 - security-responsibility gap
+- framework/migration gap
 
 ### End of Day 1 target
-You should confidently identify the correct service for at least **80% of basic use-case prompts**.
+You should confidently identify the correct service for at least **80% of basic use-case prompts** and know exactly which task statements remain weak.
 
 ---
 
 # Day 2 — Convert knowledge into exam performance
 
-## Block 1 — 2 h: Finish Domain 3 recognition services
+## Block 1 — 90–120 min: Official free Exam Prep course
+AWS's current certification-prep page says the free Exam Prep digital course is about **2 hours** and reviews exam topic areas plus sample questions.
+
+Use it as a targeted revision layer, especially for weak domains identified by the pretest/question set.
+
+Official prep page:
+https://aws.amazon.com/certification/certification-prep/
+
+Do **not** replace this with the full 12h45m Cloud Practitioner Essentials course unless you truly have time.
+
+## Block 2 — 2 h: Finish Domain 3 recognition services
 Learn recognition-level use cases for:
 - Athena, Glue, EMR, Kinesis, QuickSight, OpenSearch
 - SageMaker AI, Comprehend, Kendra, Lex, Polly, Transcribe, Translate, Rekognition, Textract, Amazon Q
@@ -94,17 +127,22 @@ Learn recognition-level use cases for:
 
 Do not go deep. One-line purpose + contrast is enough for lower-frequency services.
 
-## Block 2 — 75 min: Domain 4
+## Block 3 — 75–90 min: Domain 4
 Read `05-DOMAIN-4-BILLING-PRICING-SUPPORT.md`.
 
 Master:
 - On-Demand vs Reserved vs Savings Plans vs Spot
+- Standard vs Convertible RI concept
+- Regional vs Zonal RI concept
 - Dedicated Host vs Dedicated Instance vs Capacity Reservation
 - Pricing Calculator vs Cost Explorer vs Budgets vs CUR
-- Organizations/consolidated billing/tags
-- AWS support resources
+- cost allocation tag types
+- Organizations/consolidated billing
+- AWS Support resources and current-vs-legacy support terminology
+- Trusted Advisor, Health Dashboard/Health API
+- APN, Marketplace, Professional Services, Solutions Architects
 
-## Block 3 — 60–90 min: Traps
+## Block 4 — 60–90 min: Traps
 Read `07-CONFUSING-SERVICES-EXAM-TRAPS.md` until the comparisons are instant.
 
 You should be able to answer without hesitation:
@@ -120,61 +158,52 @@ You should be able to answer without hesitation:
 - KMS / Secrets Manager / CloudHSM / ACM
 - Pricing Calculator / Cost Explorer / Budgets / CUR
 
-## Block 4 — 2–3 h: Timed practice
-Take at least one full timed practice exam, preferably two if energy permits.
+## Block 5 — 2–3 h: Timed practice
+Do:
+1. `practice/QUESTIONS.md`
+2. `practice/TARGETED-GAPS-QUESTIONS.md`
+3. If you have Skill Builder subscription access, take the **AWS Certification Official Practice Exam**.
 
-Target:
-- **80% minimum** before being comfortable
-- **85%+ preferred**
+Suggested readiness margin:
+- **80%+** repeatedly = reasonable practice performance
+- **85%+** = stronger margin
+
+These percentages are **study targets only**, not conversions to AWS's 700/1000 scaled score.
 
 For every wrong answer, write ONE sentence explaining:
 1. why the correct answer is correct, and
 2. why your chosen answer is wrong.
 
-This is higher value than doing endless new questions.
-
-## Block 5 — 60 min: Weak-area patching
+## Block 6 — 60 min: Weak-area patching
 Only study material tied to your errors.
 
 Examples:
 - Missed CAF question -> study CAF only.
 - Confused WAF/Shield -> fix that pair only.
-- Missed support plan -> review support section only.
+- Missed support-plan question -> review support section only.
+- Missed root-user task -> review the root-user subsection only.
 
-Do not restart a 12-hour course.
+Do not restart a long course.
 
 ## Final 2–3 hours before sleep/exam
 Read only:
 - `08-LAST-MINUTE-CRAM.md`
 - `06-SERVICE-CHEAT-SHEET.md`
 - `07-CONFUSING-SERVICES-EXAM-TRAPS.md`
+- your personal wrong-answer list
 
 Then stop cramming and sleep properly.
 
 ---
 
-# Best use of AWS Skill Builder with only 48 hours
+# AWS Cloud Practitioner Essentials: use selectively
 
-## Must do
-1. Official Exam Guide
-2. Official Practice Question Set (20 questions)
-3. CLF-C02 Exam Prep material for weak domains
+Current AWS Skill Builder listing:
+https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/8D79F3AVR7
 
-## Useful if time allows
-- Official Practice Exam (subscription)
-- selected sections of AWS Cloud Practitioner Essentials
+AWS currently lists the course as **12h45m**, free, Fundamental level, last updated May 15, 2026.
 
-## Do NOT attempt to finish everything merely for completion
-AWS Cloud Practitioner Essentials is now a long course. With two days, use it selectively to fill gaps rather than consuming every lesson sequentially.
-
-Official Skill Builder prep hub:
-https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02
-
-Cloud Practitioner Essentials:
-https://explore.skillbuilder.aws/learn/courses/134/aws-cloud-practitioner-essentials
-
-Official Practice Question Set (link may redirect as Skill Builder evolves):
-https://explore.skillbuilder.aws/learn/course/external/view/elearning/14050/aws-certified-cloud-practitioner-official-practice-question-set-clf-c02-english
+With only two days, use selected sections to repair gaps rather than consuming every lesson sequentially.
 
 ---
 
