@@ -1,28 +1,34 @@
 # 00 — Official CLF-C02 Exam Blueprint
 
-This file maps the current AWS CLF-C02 task statements into exactly what you need to know.
+This is the scope-control file. It maps the current AWS CLF-C02 task statements into exactly what you need to know for the exam.
 
-## Domain 1 — Cloud Concepts (24%)
+Official weights:
+- Domain 1: Cloud Concepts — **24%**
+- Domain 2: Security and Compliance — **30%**
+- Domain 3: Cloud Technology and Services — **34%**
+- Domain 4: Billing, Pricing, and Support — **12%**
 
-### 1.1 Benefits of the AWS Cloud
+# Domain 1 — Cloud Concepts (24%)
+
+## 1.1 Benefits of the AWS Cloud
 Know:
 - AWS Cloud value proposition
-- Global infrastructure benefits: global reach, faster deployment
-- High availability
-- Elasticity
-- Agility
-- Scalability
-- Economies of scale
-- Variable vs fixed costs
+- global infrastructure benefits: global reach, faster deployment
+- high availability
+- elasticity
+- agility
+- scalability
+- economies of scale
+- variable vs fixed costs
 
-You should be able to distinguish:
+Distinguish:
 - **Scalability**: ability to handle growth
-- **Elasticity**: automatically scale out/in with demand
-- **High availability**: minimize downtime via redundancy
-- **Fault tolerance**: continue operating despite component failures
-- **Agility**: provision/change resources quickly
+- **Elasticity**: dynamically scale out/in with demand
+- **High availability**: minimize downtime through redundancy
+- **Fault tolerance**: continue operating despite component failure
+- **Agility**: provision/change resources rapidly
 
-### 1.2 Design principles of the AWS Cloud
+## 1.2 Design principles of the AWS Cloud
 Know the six AWS Well-Architected pillars:
 1. Operational Excellence
 2. Security
@@ -31,19 +37,19 @@ Know the six AWS Well-Architected pillars:
 5. Cost Optimization
 6. Sustainability
 
-Know the difference between them. Typical question: a scenario describes a design decision and asks which pillar it supports.
+Recognize which pillar a scenario describes.
 
-### 1.3 Migration benefits and strategies
+## 1.3 Migration benefits and strategies
 Know:
-- Why organizations migrate to AWS
-- AWS Cloud Adoption Framework (AWS CAF)
+- business/technical benefits of migrating
+- AWS Cloud Adoption Framework (CAF)
 - CAF perspectives: **Business, People, Governance, Platform, Security, Operations**
-- Migration approaches and supporting services
-- AWS Snow Family for offline/physical data transfer scenarios
-- Database replication/migration concepts
+- migration approaches
+- AWS Snow Family physical/offline transfer concept
+- database/application migration-service recognition
 
-For the exam, understand migration strategy concepts such as:
-- Rehost (lift and shift)
+Migration strategies:
+- Rehost
 - Replatform
 - Refactor/re-architect
 - Repurchase
@@ -51,16 +57,14 @@ For the exam, understand migration strategy concepts such as:
 - Retain
 - Relocate
 
-Do not spend time implementing migration tools.
-
-### 1.4 Cloud economics
+## 1.4 Cloud economics
 Know:
-- Fixed vs variable costs
-- On-premises cost categories: facilities, power, cooling, hardware, maintenance, staff, networking, capacity planning
+- fixed vs variable costs
+- on-premises cost categories
 - BYOL vs license-included
-- Rightsizing
-- Automation benefits
-- Economies of scale
+- rightsizing
+- automation benefits
+- economies of scale
 
 ---
 
@@ -70,57 +74,62 @@ Know:
 Know:
 - **AWS = security OF the cloud**
 - **Customer = security IN the cloud**
-- Responsibilities shift depending on service
+- responsibilities vary by service
 
 High-value comparison:
 
 ### EC2
-AWS: facilities, hardware, physical networking, virtualization layer.  
-Customer: guest OS, patches, apps, data, IAM, firewall/security-group configuration.
+AWS: facilities, hardware, physical network, virtualization layer.  
+Customer: guest OS/patches, apps, data, IAM, network/security configuration.
 
 ### RDS
-AWS additionally manages more of the DB platform/OS/maintenance layer.  
-Customer still owns data, DB access, users, configuration choices.
+AWS additionally manages more of the DB host/platform/maintenance layer.  
+Customer still manages data, DB access, users, schema/application choices.
 
 ### Lambda
-AWS manages even more infrastructure/runtime platform components.  
-Customer still owns code, data, permissions, application configuration.
+AWS manages still more infrastructure/runtime operations.  
+Customer manages code, data, permissions and application configuration.
 
-## 2.2 Security, governance, compliance
+## 2.2 Security, governance and compliance
 Know:
-- Encryption at rest vs encryption in transit
+- encryption at rest vs in transit
 - AWS Artifact = compliance reports/agreements
-- CloudWatch = operational monitoring/metrics/logs/alarms
-- CloudTrail = API/account activity audit trail
-- AWS Config = resource configuration history/rules
-- AWS Audit Manager = helps collect audit evidence
+- CloudWatch = operational metrics/logs/alarms
+- CloudTrail = API/account activity
+- Config = resource configuration history/rules
+- Audit Manager = audit evidence collection
 - GuardDuty = threat detection
 - Inspector = vulnerability management
 - Security Hub = central security posture/findings
 - Shield = DDoS protection
 - WAF = web request filtering
-- Trusted Advisor can surface security/best-practice checks
+- where security logs/audit evidence can be found
+- IAM credential/access reporting concepts
 
 ## 2.3 Access management
 Know:
-- IAM users, groups, roles, policies
-- Least privilege
-- Root-user protection
+- IAM users, groups, roles and policies
+- AWS managed vs customer managed vs inline policies
+- least privilege
+- root-user protection and **common root-only task examples**
 - MFA
-- Access keys vs console passwords
+- access keys vs console passwords
+- IAM password policies
 - IAM Identity Center
-- Federation
-- Cross-account roles
+- federation
+- cross-account roles
 - Secrets Manager
-- Systems Manager as a management/credential/configuration resource where relevant
+- Systems Manager Parameter Store / SecureString at recognition level
+- IAM credential report
 
 Critical exam rules:
-- Prefer temporary credentials/roles over hard-coded long-term credentials.
-- Protect the root user and avoid routine use.
-- An IAM role is **assumed** and commonly provides temporary credentials.
+- prefer temporary credentials/roles over hard-coded long-term credentials
+- protect the root user; do not use root routinely
+- an IAM role is assumed and commonly supplies temporary credentials
+- an IAM credential report audits IAM user credential/MFA/key status
 
 ## 2.4 Security resources
-Know use cases for:
+Recognize use cases for:
 - WAF
 - Firewall Manager
 - Shield
@@ -133,20 +142,28 @@ Know use cases for:
 - CloudHSM
 - ACM
 - Secrets Manager
+- Parameter Store
 - AWS Marketplace third-party security products
-- AWS Knowledge Center / Security Blog / official docs
+- AWS Knowledge Center / security documentation / Security Blog
+- Trusted Advisor security checks
 
 ---
 
 # Domain 3 — Cloud Technology and Services (34%)
 
 ## 3.1 Deploying and operating AWS
-Know when to use:
+Know:
+- one-time/manual operations vs repeatable/automated operations
 - AWS Management Console
 - AWS CLI
 - SDKs/APIs
 - Infrastructure as Code
 - CloudFormation
+
+Exam logic:
+- one-off visual/manual administration -> Console may fit
+- repeatable scripting/automation -> CLI/SDK/API
+- repeatable infrastructure definition -> IaC/CloudFormation
 
 Know deployment models:
 - Cloud
@@ -157,22 +174,24 @@ Know deployment models:
 Know:
 - Region
 - Availability Zone
-- Edge location
-- Multi-AZ = high availability within a Region
-- Multi-Region = disaster recovery, business continuity, data sovereignty, low latency for global users
+- edge location
+- Region-selection factors: compliance, proximity/latency, service availability, pricing
+- Multi-AZ = availability/resilience inside a Region
+- Multi-Region = regional resilience/DR/global requirements/data sovereignty
+- edge services such as CloudFront
 
 ## 3.3 Compute
 Know:
 - EC2 and instance-family categories
-- Auto Scaling = elasticity
+- Auto Scaling = elasticity/capacity adjustment
 - Elastic Load Balancing = distribute traffic
 - ECS = AWS container orchestration
 - EKS = managed Kubernetes
 - Fargate = serverless compute for containers
-- Lambda = serverless functions/event-driven code
+- Lambda = serverless/event-driven functions
 - ECR = container image registry
-- Elastic Beanstalk = managed app deployment platform
-- Lightsail = simplified VPS/application hosting
+- Elastic Beanstalk = managed application deployment environment
+- Lightsail = simplified hosting
 - Batch = batch jobs
 - Outposts = AWS infrastructure on premises
 
@@ -182,39 +201,40 @@ Know:
 - Aurora = AWS relational engine compatible with MySQL/PostgreSQL
 - DynamoDB = serverless NoSQL key-value/document DB
 - ElastiCache = in-memory cache
-- DocumentDB = document database
-- Neptune = graph database
-- DMS = move/migrate databases/data
-- SCT = convert database schemas
+- DocumentDB = document DB
+- Neptune = graph DB
+- DMS = database/data migration
+- SCT = schema conversion
+- Redshift distinction as analytics warehouse
 
 ## 3.5 Networking
 Know:
-- VPC
-- Public/private subnets
+- VPC, subnets, route tables, gateways
 - Internet Gateway
 - NAT concept
-- Security Groups = stateful resource-level firewall
+- Security Groups = stateful resource-level control
 - Network ACLs = stateless subnet-level control
 - Route 53 = DNS
 - CloudFront = CDN
 - Direct Connect = dedicated network connection
 - VPN = encrypted tunnel
+- Site-to-Site vs Client VPN
 - Transit Gateway = network hub
 - PrivateLink = private service connectivity
-- Global Accelerator = improve global path/availability to application endpoints
+- Global Accelerator = optimized global path to application endpoints
 - API Gateway = managed API front door
 
 ## 3.6 Storage
 Know:
 - S3 = object storage
-- EBS = block storage for EC2
-- EFS = shared file storage
-- FSx = managed specialized file systems
-- S3 storage classes and lifecycle policies
+- S3 storage classes / lifecycle policies
 - S3 Glacier = archival tiers
-- Instance Store = ephemeral block storage tied to host/instance lifecycle
+- EBS = persistent block storage for EC2
+- Instance Store = ephemeral host-attached storage
+- EFS = shared managed file storage
+- FSx = managed specialized file systems
 - Storage Gateway = hybrid storage
-- AWS Backup = centralized backups
+- AWS Backup = centralized backup
 - Elastic Disaster Recovery = DR
 
 ## 3.7 AI/ML and analytics
@@ -258,6 +278,21 @@ Know recognition/use cases for:
 - Amplify
 - AppSync
 - IoT Core
+- Management Console
+- Compute Optimizer
+- Control Tower
+- Health Dashboard
+- License Manager
+- Organizations
+- Service Catalog
+- Service Quotas
+- Systems Manager
+- Trusted Advisor
+- Well-Architected Tool
+- Application Discovery Service
+- Application Migration Service
+- Migration Evaluator
+- Migration Hub
 - AWS Support
 
 ---
@@ -274,63 +309,88 @@ Know EC2 purchasing concepts:
 - Dedicated Instances
 - Capacity Reservations
 
-Know storage-tier pricing concepts and data-transfer concepts.
+Explicit RI concepts:
+- Standard vs Convertible
+- Regional vs Zonal
+- Regional RI: AZ flexibility; no capacity reservation
+- Zonal RI: capacity reservation in specific AZ
+- eligible Regional Linux/Unix default-tenancy RI instance-size flexibility
+- RI/Savings Plans discount sharing behavior in AWS Organizations at high level
 
-General exam heuristics:
+Know storage-tier pricing and basic data-transfer pricing concepts.
+
+General heuristics:
 - On-Demand = flexible/unpredictable/short-term
-- Reserved/Savings = predictable long-running usage/commitment discount
-- Spot = cheapest for interruptible/fault-tolerant workloads
-- Dedicated Host = physical server dedicated to you; licensing/compliance scenarios
-- Capacity Reservation = reserve EC2 capacity in a specific AZ without necessarily providing a price discount
+- Reserved/Savings = predictable commitment discount
+- Spot = interruption-tolerant low-cost capacity
+- Dedicated Host = physical host/licensing scenarios
+- Capacity Reservation = guarantee capacity without inherently adding a discount
 
 ## 4.2 Billing and cost management
 Know:
 - AWS Budgets = thresholds/alerts
-- Cost Explorer = analyze historical cost/usage and trends
+- Cost Explorer = historical cost/usage analysis/trends/forecasts
 - Pricing Calculator = estimate proposed architecture cost
 - Cost and Usage Report = granular billing dataset
 - Organizations consolidated billing
-- Cost allocation tags
-- Marketplace billing concepts
+- AWS-generated vs user-defined cost allocation tags
+- relationship of cost tags to Cost Explorer/CUR
+- Marketplace billing/procurement concepts
 
 ## 4.3 Technical resources and support
 Know:
 - AWS Documentation
-- AWS whitepapers
+- AWS Whitepapers
 - AWS Prescriptive Guidance
-- AWS Knowledge Center
+- AWS Knowledge Center / re:Post Knowledge Center
 - AWS re:Post
 - AWS Support Center
 - AWS Professional Services
 - AWS Solutions Architects
 - AWS Partner Network
-- Marketplace
+- Independent Software Vendors vs system integrators/consulting partners
+- partner benefits/use cases
+- AWS Marketplace key purpose
 - Trusted Advisor
 - Health Dashboard / Health API
-- Trust & Safety team for abuse reports
+- Trust & Safety for abuse reports
 
-### Important 2026 support-plan note
-The current AWS Support portfolio has changed. Current AWS Support documentation lists **Basic, Business Support+, Enterprise Support, and Unified Operations**, while the CLF-C02 domain text still includes older plan names as examples during the 2026 transition period. Do not spend hours memorizing old pricing tables. Learn the **support-level concept** and use the current AWS docs for live plan details.
+### Important 2026 Support-plan transition
+Current AWS Support docs list:
+- Basic
+- Business Support+
+- Enterprise Support
+- Unified Operations
+
+The CLF-C02 Domain 4 page still gives legacy/transitional plan names as examples, including Developer Support, Business Support and Enterprise On-Ramp. AWS states those legacy plans retire January 1, 2027.
+
+For the exam:
+- recognize support-plan concepts and levels
+- recognize both current and legacy names if they appear in answer choices
+- do not spend 48-hour cram time memorizing every price/response-time table
 
 ---
 
-# What to deliberately NOT study deeply
+# Explicitly out-of-scope candidate job tasks
 
-AWS explicitly says these job tasks are outside the CLF-C02 target candidate scope:
+AWS says the CLF-C02 target candidate is not expected to perform:
 - coding
-- architecture design
+- designing cloud architecture
 - troubleshooting
 - implementation
 - load/performance testing
 
-So do not spend the next 48 hours configuring Kubernetes clusters, writing IAM JSON from scratch, building VPC route tables, tuning databases, or doing advanced labs.
+So do not spend these 48 hours configuring Kubernetes clusters, writing IAM JSON from scratch, building advanced VPC route tables, tuning databases, or doing complex deployment labs.
 
 # Official source links
 
 - Exam guide: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html
+- Technologies and concepts: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-technologies-concepts.html
 - Domain 1: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html
 - Domain 2: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html
 - Domain 3: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html
 - Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
 - In-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html
 - Out-of-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-out-of-scope-services.html
+
+Last validated: **2026-09-16**.
