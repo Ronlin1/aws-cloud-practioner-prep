@@ -1,6 +1,6 @@
 # Domain 1 — Cloud Concepts (24%)
 
-This domain is conceptual. You should be able to recognize the correct cloud benefit, Well-Architected pillar, migration concept, or economic principle from a scenario.
+This domain is conceptual. You should be able to recognize the correct cloud benefit, Well-Architected pillar, migration concept, CAF outcome, or economic principle from a scenario.
 
 # 1. AWS Cloud value proposition
 
@@ -173,6 +173,15 @@ Operate cloud services at levels that meet business needs.
 
 Keywords: observability, incident/problem management, patching, availability/continuity.
 
+## CAF outcome examples explicitly worth recognizing
+The CLF-C02 task statement gives examples of cloud-adoption outcomes such as:
+- **reduced business risk**
+- **improved environmental, social and governance (ESG) performance**
+- **increased revenue**
+- **increased operational efficiency**
+
+These are examples of the business value/outcomes of cloud transformation, not additional CAF perspectives.
+
 ### CAF vs Well-Architected
 - **CAF** = organizational cloud transformation/readiness.
 - **Well-Architected** = evaluate/design/operate workloads against cloud best practices.
@@ -192,6 +201,8 @@ Know WHY companies migrate:
 - operational efficiency
 - reduce business risk
 - improve scalability/availability
+- potentially improve ESG/sustainability outcomes
+- support new revenue/business opportunities
 
 ## Common migration strategies
 
@@ -283,6 +294,7 @@ You should answer these immediately:
 10. Lift and shift? -> **Rehost**
 11. Redesign app to cloud-native? -> **Refactor/re-architect**
 12. Massive offline migration with limited bandwidth? -> **Snow Family**
+13. CAF business outcomes? -> **reduced risk / ESG improvement / revenue / operational efficiency**
 
 # Official references
 
