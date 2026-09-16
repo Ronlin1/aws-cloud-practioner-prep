@@ -2,15 +2,17 @@
 
 Score the first 50 questions only. Bonus questions are extra drills.
 
-## Score guide
+## Study score guide
 
-- **45–50 (90–100%)**: strong; focus on last-minute review and staying sharp.
-- **42–44 (84–88%)**: good exam-readiness range; patch the few weak categories.
-- **40–41 (80–82%)**: workable but keep drilling confusing-service pairs.
-- **35–39 (70–78%)**: near the scaled passing neighborhood conceptually, but not a safe practice margin. Review weak domains before sitting.
-- **Below 35**: do targeted review first, especially Domains 2 and 3.
+These are **study targets only**, not AWS score conversions:
 
-> AWS uses scaled scoring, so practice percentages do **not** convert directly to the official 700/1000 passing score.
+- **45–50 (90–100%)**: strong practice performance; focus on final review and weak details.
+- **42–44 (84–88%)**: good practice range; patch the remaining weak categories.
+- **40–41 (80–82%)**: keep drilling confusing-service pairs and explicit blueprint gaps.
+- **35–39 (70–78%)**: targeted review is strongly recommended before the exam.
+- **Below 35**: revisit weak domains, especially Domains 2 and 3, before more full mocks.
+
+> AWS uses **scaled scoring**. A raw practice percentage does **not** convert directly to the official 700/1000 passing score, and AWS does not publish a simple raw-question percentage required to pass.
 
 ---
 
@@ -32,7 +34,7 @@ Reliability focuses on a workload performing its intended function correctly and
 Rightsizing and eliminating idle resources are classic Cost Optimization concerns.
 
 **6. A — People**  
-The CAF People perspective covers skills, culture, leadership, workforce, and organizational change.
+The CAF People perspective covers skills, culture, leadership, workforce and organizational change.
 
 **7. B — Rehost**  
 Rehost is commonly called lift and shift: move the workload with minimal changes.
@@ -60,7 +62,7 @@ AWS CAF structures organizational cloud transformation/readiness. Well-Architect
 For EC2, the customer manages and patches the guest operating system. AWS manages the underlying physical infrastructure/hypervisor layer.
 
 **14. B — AWS manages more of the underlying DB platform for RDS**  
-RDS is more managed than running a database yourself on EC2. The customer still owns data, access, schema, and configuration choices.
+RDS is more managed than running a database yourself on EC2. The customer still owns data, access, schema and configuration choices.
 
 **15. C — Assign an IAM role**  
 Roles provide temporary credentials and avoid hard-coding long-term access keys in applications.
@@ -72,7 +74,7 @@ Grant only the permissions necessary to complete the task.
 CloudTrail records AWS API/account activity and is the right place to investigate who performed an API action.
 
 **18. C — Amazon CloudWatch**  
-CloudWatch handles metrics, logs, alarms, and dashboards. CPU threshold alarms are a classic CloudWatch use case.
+CloudWatch handles metrics, logs, alarms and dashboards. CPU threshold alarms are a classic CloudWatch use case.
 
 **19. A — AWS Config**  
 Config records resource configurations/changes and can evaluate resources against rules.
@@ -121,7 +123,7 @@ ECR stores container images.
 Fargate is serverless compute for containers used with services such as ECS/EKS.
 
 **33. C — Amazon S3**  
-S3 is highly durable object storage and is appropriate for images, documents, logs, backups, and data-lake objects.
+S3 is highly durable object storage and is appropriate for images, documents, logs, backups and data-lake objects.
 
 **34. A — Amazon EFS**  
 EFS is a shared managed file system that can be mounted by multiple compatible compute instances.
@@ -148,7 +150,7 @@ Athena provides serverless SQL querying directly over data stored in S3.
 Glue is the serverless data-integration/ETL service and includes the Glue Data Catalog.
 
 **42. A — Amazon Kinesis**  
-Kinesis is associated with real-time streaming data such as clickstreams, logs, and telemetry.
+Kinesis is associated with real-time streaming data such as clickstreams, logs and telemetry.
 
 **43. B — Amazon Route 53**  
 Route 53 is AWS's DNS service.
@@ -164,7 +166,7 @@ CloudFront is AWS's CDN and uses edge locations to deliver/cache content closer 
 Use Pricing Calculator to estimate the cost of a proposed architecture before deployment.
 
 **46. A — AWS Cost Explorer**  
-Cost Explorer analyzes historical/current costs, usage patterns, trends, and forecasts.
+Cost Explorer analyzes historical/current costs, usage patterns, trends and forecasts.
 
 **47. A — AWS Budgets**  
 Budgets tracks cost/usage against thresholds and can send alerts.
@@ -173,7 +175,7 @@ Budgets tracks cost/usage against thresholds and can send alerts.
 Spot uses spare EC2 capacity at deep discounts, but instances can be interrupted, making it ideal for fault-tolerant batch workloads.
 
 **49. C — Capacity Reservation**  
-A Capacity Reservation ensures EC2 capacity is available in a specified Availability Zone. It is primarily a capacity-availability mechanism, not inherently a discount model.
+A Capacity Reservation ensures EC2 capacity is available for the specified reservation attributes. It is primarily a capacity-availability mechanism, not inherently a discount model.
 
 **50. A — Dedicated Host**  
 Dedicated Hosts provide a physical server dedicated to the customer with host visibility/control useful for certain socket/core/server-bound licensing requirements.
@@ -198,7 +200,7 @@ SNS is publish/subscribe and commonly used for fan-out to multiple subscribers/e
 Transcribe converts speech to text. Polly does the reverse: text to speech.
 
 **B6. B — Amazon Textract**  
-Textract extracts text, forms, and tables from documents. Rekognition analyzes images/video more generally.
+Textract extracts text, forms and tables from documents. Rekognition analyzes images/video more generally.
 
 ---
 
@@ -218,4 +220,4 @@ When you miss a question, tag it with one of these labels:
 - `COST`
 - `READING` — knew it but misread keywords
 
-Then study only the corresponding section in the repo. This is much more efficient than restarting a full course with less than 48 hours remaining.
+Then study only the corresponding section in the repo. After this mock, also do `TARGETED-GAPS-QUESTIONS.md`, because it covers explicit task-statement details that cannot all fit into one 50-question weighted mock.
