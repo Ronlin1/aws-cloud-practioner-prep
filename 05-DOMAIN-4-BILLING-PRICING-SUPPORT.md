@@ -1,6 +1,6 @@
 # Domain 4 — Billing, Pricing & Support (12%)
 
-Smallest domain, but many questions are straightforward if you know the distinctions.
+This is the smallest domain, but many questions are straightforward if the distinctions are instant.
 
 # 1. EC2 purchasing options
 
@@ -11,25 +11,51 @@ Best for:
 - short-term workloads
 - unpredictable demand
 - new applications
-- workloads where flexibility matters more than commitment discounts
+- maximum purchasing flexibility
 
 **Trigger:** “no commitment”, “unpredictable”, “short term”.
 
 ## Reserved Instances (RIs)
-Commitment-based pricing for eligible EC2 usage over a term.
+A Reserved Instance is primarily a **billing discount mechanism** applied to matching EC2 usage; some zonal RIs also reserve capacity.
 
 Best for:
-- predictable long-running workloads
+- predictable long-running EC2 usage
 - commitment in exchange for discount relative to On-Demand under applicable terms
 
-Know conceptually that RI attributes/flexibility and billing benefits can interact with AWS Organizations. Do not spend precious time memorizing obscure RI edge cases.
+### Standard vs Convertible RIs
+At exam level:
+- **Standard RI** -> less configuration exchange flexibility; typically stronger discount potential.
+- **Convertible RI** -> can be exchanged for another Convertible RI of equal or greater value with different configuration attributes.
+
+Do not memorize exchange mechanics.
+
+### Regional vs Zonal RIs
+This distinction is explicitly examinable.
+
+**Regional RI**
+- discount can apply across Availability Zones in the selected Region
+- does **not** reserve capacity
+- can provide instance-size flexibility for eligible Linux/Unix default-tenancy usage within an instance family
+
+**Zonal RI**
+- scoped to one specific Availability Zone
+- reserves capacity there
+- no AZ flexibility
+- no instance-size flexibility
+
+### RIs and AWS Organizations
+Under consolidated billing/discount-sharing settings, eligible unused RI discount benefits can be applied across linked accounts in an AWS Organization. The purchasing account is considered first; sharing behavior is controlled by organization billing preferences.
+
+Important distinction:
+- **RI discount benefit** can be shared according to billing settings.
+- a **zonal RI's capacity reservation itself** is for the owning account, not automatically shared as capacity to other accounts.
 
 ## AWS Savings Plans
 Commit to a consistent amount of eligible compute usage/spend (USD/hour) for a term and receive discounted pricing.
 
 Best for:
 - long-running predictable compute usage
-- customers wanting more flexibility than some traditional reservation models
+- customers wanting commitment discounts with broader compute flexibility than some RI configurations
 
 ## Spot Instances
 Use spare EC2 capacity at deep discounts, but capacity can be interrupted.
@@ -54,28 +80,29 @@ Common exam reasons:
 - compliance requiring physical host visibility/control
 
 ## Dedicated Instances
-Instances run on hardware dedicated to one customer, but with less host-level control/visibility than Dedicated Hosts.
+Instances run on hardware dedicated to one customer, but without the same host-level visibility/control as Dedicated Hosts.
 
-## Capacity Reservations
-Reserve EC2 capacity in a specific Availability Zone.
+## On-Demand Capacity Reservations
+Reserve EC2 capacity for specified attributes, commonly in a specific Availability Zone.
 
 Key exam point:
-- guarantees/reserves capacity availability
-- does **not by itself imply a pricing discount**
+- reserves/guarantees capacity availability
+- does **not by itself provide a pricing discount**
+- can still be covered by eligible Savings Plans or Regional RI billing discounts
 
 ### Purchasing-option instant map
 - flexible/no commitment -> On-Demand
-- predictable/commitment -> RI or Savings Plans
-- interruptible cheapest -> Spot
+- predictable commitment -> RI or Savings Plans
+- interruptible lowest-cost capacity -> Spot
 - dedicated physical server/licensing -> Dedicated Host
 - dedicated hardware without host-level control -> Dedicated Instance
-- guarantee capacity in an AZ -> Capacity Reservation
+- guarantee capacity -> Capacity Reservation
 
 ---
 
 # 2. Storage pricing concepts
 
-The exam may test that different storage classes trade cost against access pattern/retrieval characteristics.
+Different storage classes trade cost against access pattern, resilience and retrieval characteristics.
 
 General S3 logic:
 - frequent access -> Standard
@@ -84,48 +111,45 @@ General S3 logic:
 - infrequent and one-AZ resilience acceptable -> One Zone-IA
 - long-term archive -> Glacier classes
 
-Lifecycle policies can automatically transition objects between classes or expire them.
+Lifecycle policies can automatically transition or expire objects.
 
 Do not memorize exact per-GB prices.
 
 ---
 
-# 3. Data transfer pricing concepts
+# 3. Data-transfer pricing concepts
 
 Know conceptually:
-- data transfer **into** AWS is often free for many services/scenarios
+- data transfer **into** AWS is often free in many common scenarios
 - data transfer **out** to the internet is commonly charged
-- cross-Region transfer can incur charges
-- transfer pricing varies by service/path/Region
+- inter-Region transfer can incur charges
+- pricing varies by service/path/Region
 
-Do not assume “all network traffic inside AWS is free”.
+Do not assume all AWS network traffic is free.
 
 ---
 
 # 4. AWS Pricing Calculator
 
-Use BEFORE deployment/planning to estimate cost.
+Use to estimate expected cost for a proposed AWS architecture.
 
 Trigger:
-> “Estimate monthly cost of proposed architecture.”
-
-Answer:
-> AWS Pricing Calculator.
+> “Estimate monthly cost before deployment.”
 
 ---
 
 # 5. AWS Cost Explorer
 
-Analyze historical/current AWS costs and usage patterns/trends and forecasts.
+Analyze historical/current AWS costs, usage patterns, trends and forecasts.
 
 Trigger:
-> “Where did our money go?” / “view cost trend over last months”.
+> “Where did our money go?” / “view cost trend over previous months”.
 
 ---
 
 # 6. AWS Budgets
 
-Set cost/usage/reservation/Savings Plans budgets and alert thresholds.
+Set budgets and alerts for cost/usage and supported commitment metrics.
 
 Trigger:
 > “Notify me when monthly AWS spending reaches 80% of $1,000.”
@@ -148,20 +172,18 @@ Trigger:
 - **Budgets** -> threshold/alert
 - **CUR** -> granular billing dataset
 
-This comparison is highly examinable.
-
 ---
 
 # 9. AWS Organizations + consolidated billing
 
-AWS Organizations can centrally manage multiple AWS accounts.
+AWS Organizations can centrally manage multiple accounts.
 
 Know:
 - consolidated billing
 - organizational units (OUs)
 - Service Control Policies (SCPs)
 - aggregate cost visibility
-- some pricing/discount benefits can be shared across eligible linked accounts under AWS billing rules
+- RI/Savings Plans discount-sharing concepts
 
 ## SCP reminder
 SCP = permission guardrail, not a permission grant.
@@ -170,129 +192,137 @@ SCP = permission guardrail, not a permission grant.
 
 # 10. Cost allocation tags
 
-Tags help categorize spend by attributes such as:
-- project
-- department
-- owner
-- environment
+The exam guide explicitly expects you to understand cost allocation tags and their relation to billing reports.
 
-Example:
-`Project=FarmZenith`
-`Environment=Production`
+Two types:
+
+## AWS-generated cost allocation tags
+Defined and applied by AWS for supported resources/use cases.
+
+## User-defined cost allocation tags
+Tags you create/apply, such as:
+- `Project=FarmZenith`
+- `Department=DataEngineering`
+- `Environment=Production`
+
+Cost allocation tags must be activated for use in supported billing/cost-management reporting.
 
 Trigger:
-> “show costs by project/team/environment”.
+> “show or allocate costs by project/team/environment”.
 
 Think:
-> cost allocation tags + billing/cost reports.
+> cost allocation tags + Cost Explorer/CUR/billing tools.
 
 ---
 
 # 11. AWS Marketplace
 
-Marketplace for third-party software, data/services, and AWS-compatible offerings.
+Marketplace for third-party software, data and services.
 
 Exam concepts:
 - find/deploy third-party software
-- centralized procurement/billing in supported scenarios
-- governance/entitlement/cost-management capabilities
-- security products can also be obtained here
+- centralized procurement and billing in supported scenarios
+- governance/entitlement capabilities
+- software/security products from independent software vendors (ISVs)
+
+Trigger:
+> “Purchase third-party AWS-compatible software through AWS.”
 
 ---
 
-# 12. AWS Support resources
+# 12. Official AWS technical resources
 
-Know the role of:
+Know the role of each.
 
 ## AWS Documentation
-Official technical product docs.
+Official service/product documentation.
 
 ## AWS Whitepapers
-Architecture, security, economics, frameworks, best-practice material.
+Architecture, security, economics, frameworks and best-practice material.
 
 ## AWS Prescriptive Guidance
-Patterns/strategies/guidance for common cloud objectives.
+Patterns, strategies and guidance for common cloud objectives/migrations.
 
 ## AWS Knowledge Center / re:Post Knowledge Center
-Curated answers/troubleshooting information.
+Curated troubleshooting answers and support knowledge.
 
 ## AWS re:Post
 AWS community Q&A/knowledge platform.
 
 ## AWS Support Center
-Manage AWS Support cases based on support entitlement.
+Create/manage support cases according to support entitlement.
 
-## AWS Professional Services
-AWS experts who help customers with transformations/complex projects.
+## AWS Trusted Advisor
+Best-practice recommendations/checks across areas such as cost optimization, security, performance, resilience and service quotas. Exact checks/features depend on support entitlement.
 
-## AWS Solutions Architects
-AWS technical experts who help customers understand/design AWS solutions.
-
-## AWS Partner Network (APN)
-Ecosystem of consulting and technology partners, including system integrators and software vendors.
+## AWS Health Dashboard / AWS Health API
+Account/resource-relevant AWS events and health information.
 
 ## AWS Trust & Safety
-Report abuse/misuse of AWS resources.
+Contact/report channel for abuse or misuse involving AWS resources.
 
 ---
 
-# 13. Trusted Advisor
+# 13. AWS people and partner resources
 
-Provides best-practice checks/recommendations across areas such as:
-- cost optimization
-- security
-- performance
-- resilience/fault tolerance
-- service quotas
+This is explicitly in Domain 4.3.
 
-Exact feature availability can depend on support plan.
+## AWS Professional Services
+AWS experts who help customers execute cloud transformations and complex initiatives.
 
-Trigger:
-> “best-practice recommendations for AWS environment”.
+## AWS Solutions Architects
+AWS technical experts who help customers understand and design solutions on AWS.
+
+## AWS Partner Network (APN)
+Ecosystem of AWS partners.
+
+Recognize:
+- **Independent Software Vendors (ISVs)** -> build/provide software products
+- **system integrators / consulting partners** -> help plan, migrate, integrate and implement solutions
+
+Exam trigger:
+> “Need an AWS-qualified external consulting or technology partner.”
+
+Think:
+> AWS Partner Network.
+
+### Why partners matter
+At exam level, benefits include access to specialized expertise, software/solutions, migration/implementation support and industry/workload experience.
 
 ---
 
-# 14. AWS Health Dashboard / Health API
+# 14. AWS Support plans — important 2026 transition
 
-Shows AWS events that may affect your account/resources.
-
-Trigger:
-> “Is an AWS service event affecting my resources/account?”
-
-Do not confuse:
-- CloudWatch -> your workload metrics/logs/alarms
-- Health Dashboard -> AWS events affecting resources/account
-
----
-
-# 15. AWS Support plans — important 2026 note
-
-The CLF-C02 exam guide's Domain 4 text still uses some legacy/transitional plan names as examples, including Developer Support, Business Support, Enterprise On-Ramp, and Enterprise Support.
-
-Current AWS Support documentation in 2026 lists:
-- Basic
-- Business Support+
+The CLF-C02 Domain 4 task page still names legacy/transitional plans as examples:
+- Developer Support
+- Business Support
+- Enterprise On-Ramp
 - Enterprise Support
-- Unified Operations
 
-AWS also states that legacy Developer Support, Business Support, and Enterprise On-Ramp are being retired by January 1, 2027, with customers transitioning during 2026.
+Current live AWS Support documentation in September 2026 lists:
+- **Basic**
+- **Business Support+**
+- **Enterprise Support**
+- **Unified Operations**
 
-## What to learn for the exam
-Do **not** waste time memorizing old monthly prices and every response-time table.
+AWS states that Developer Support, legacy Business Support and Enterprise On-Ramp will be discontinued **January 1, 2027**.
 
-Learn the principle:
-- **Basic** -> included, account/billing/customer service, docs/community/self-service resources
-- higher paid support -> more technical support, faster response, more proactive/expert engagement
-- Enterprise-style support -> deeper proactive/strategic assistance, TAM-style capabilities depending on current plan
+## What to learn for CLF-C02
+Do not spend precious time memorizing every current monthly price or response-time table.
 
-Because the exam guide and live AWS support portfolio are in transition, read any support-plan question carefully and answer from the options/context presented.
+Learn the support-selection principle:
+- **Basic** -> included foundational/account/self-service resources
+- paid business-level support -> 24/7 technical support and faster response options than Basic, depending on plan
+- enterprise-level offerings -> deeper proactive/strategic support and designated expertise such as TAM capabilities depending on current plan
+
+Because AWS is in a transition period and the exam guide still references legacy names, read the answer options carefully. Recognize both old guide terminology and the current live portfolio.
 
 Current Support docs:
 https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 
 ---
 
-# 16. Exam scenarios
+# 15. High-value exam scenarios
 
 ### “We are designing an application and need to estimate monthly AWS cost.”
 **Pricing Calculator**
@@ -312,42 +342,66 @@ https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 ### “Production workload is predictable for years and can make a commitment.”
 **Reserved Instances / Savings Plans**, depending on scenario wording.
 
-### “Company must guarantee that EC2 capacity is available in a particular AZ.”
+### “RI discount should be usable across AZs in one Region and no capacity reservation is required.”
+**Regional RI**
+
+### “Need RI-linked capacity reservation in one specific AZ.”
+**Zonal RI**
+
+### “Need to exchange the RI for different configuration later.”
+**Convertible RI**
+
+### “Company must guarantee EC2 capacity.”
 **Capacity Reservation**
 
-### “Company uses server-bound licensing and needs visibility/control of physical EC2 host.”
+### “Company uses server-bound licensing and needs physical host visibility/control.”
 **Dedicated Host**
 
 ### “Need AWS best-practice recommendations across cost/security/performance.”
 **Trusted Advisor**
 
 ### “Need to determine whether an AWS event is affecting account resources.”
-**AWS Health Dashboard**
+**AWS Health Dashboard / AWS Health**
+
+### “Need third-party AWS-compatible software from a vendor.”
+**AWS Marketplace**
+
+### “Need an external AWS consulting/technology partner.”
+**AWS Partner Network (APN)**
+
+### “Need AWS experts for a transformation engagement.”
+**AWS Professional Services**
 
 ---
 
 # Domain 4 instant recall
 
-1. No commitment -> On-Demand
-2. Interruptible cheapest -> Spot
-3. Long predictable commitment -> RI/Savings Plans
-4. Dedicated physical host -> Dedicated Host
-5. Guarantee AZ capacity -> Capacity Reservation
-6. Estimate proposed cost -> Pricing Calculator
-7. Analyze historical spend -> Cost Explorer
-8. Spending alert -> Budgets
-9. Detailed cost data -> CUR
-10. Group account bills -> Organizations consolidated billing
-11. Allocate cost to project -> cost allocation tags
-12. Third-party software -> Marketplace
-13. Best-practice recommendations -> Trusted Advisor
-14. AWS account-impacting event -> Health Dashboard
-15. Community Q&A -> re:Post
-16. AWS expert consulting/transformation -> Professional Services
-17. Partner ecosystem -> APN
+1. No commitment -> **On-Demand**
+2. Interruptible lowest-cost -> **Spot**
+3. Long predictable commitment -> **RI/Savings Plans**
+4. RI exchange flexibility -> **Convertible RI**
+5. RI applies across AZs in Region, no capacity reservation -> **Regional RI**
+6. RI reserves capacity in specific AZ -> **Zonal RI**
+7. Dedicated physical host -> **Dedicated Host**
+8. Guarantee EC2 capacity -> **Capacity Reservation**
+9. Estimate proposed cost -> **Pricing Calculator**
+10. Analyze historical spend -> **Cost Explorer**
+11. Spending alert -> **Budgets**
+12. Detailed cost data -> **CUR**
+13. Group account bills -> **Organizations consolidated billing**
+14. Allocate cost to project -> **cost allocation tags**
+15. Third-party software -> **Marketplace**
+16. Best-practice recommendations -> **Trusted Advisor**
+17. AWS account-impacting event -> **Health Dashboard / AWS Health**
+18. Community Q&A -> **re:Post**
+19. AWS expert consulting/transformation -> **Professional Services**
+20. Partner ecosystem -> **APN**
+21. Abuse report involving AWS resources -> **AWS Trust & Safety**
 
 # Official references
 
 - Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
+- RI scope/flexibility: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
+- RI sharing: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html
+- Cost allocation tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html
 - Current Support plans: https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
-- Current Support pricing: https://aws.amazon.com/premiumsupport/pricing/
