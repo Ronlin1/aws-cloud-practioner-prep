@@ -52,9 +52,14 @@ Use this for rapid recall. Read the requirement, cover the answer, and answer wi
 | AWS permissions/identities | IAM |
 | Central workforce access to accounts/apps | IAM Identity Center |
 | End-user app sign-up/sign-in | Amazon Cognito |
+| Reusable policy created/maintained by AWS | AWS managed IAM policy |
+| Reusable policy customer creates and edits | Customer managed IAM policy |
+| Policy embedded directly in one identity | Inline IAM policy |
+| Audit IAM user password/key/MFA status | IAM credential report |
 | Manage encryption keys | AWS KMS |
 | Dedicated HSM | AWS CloudHSM |
-| Store credentials/API secrets | AWS Secrets Manager |
+| Store credentials/API secrets with secret-management features | AWS Secrets Manager |
+| Store application/configuration parameters; encrypted SecureString option | Systems Manager Parameter Store |
 | TLS certificates | AWS Certificate Manager |
 | Metrics/logs/alarms | Amazon CloudWatch |
 | AWS API/account audit trail | AWS CloudTrail |
@@ -81,7 +86,7 @@ Use this for rapid recall. Read the requirement, cover the answer, and answer wi
 | Infrastructure as Code | AWS CloudFormation |
 | Fleet/patching/automation operations | AWS Systems Manager |
 | Service limits/quotas | Service Quotas |
-| AWS events affecting account/resources | AWS Health Dashboard |
+| AWS events affecting account/resources | AWS Health Dashboard / AWS Health |
 | Best-practice recommendations | AWS Trusted Advisor |
 | Right-sizing recommendations | AWS Compute Optimizer |
 | Approved governed cloud products | AWS Service Catalog |
@@ -117,10 +122,15 @@ Use this for rapid recall. Read the requirement, cover the answer, and answer wi
 | Analyze past/current costs/trends | AWS Cost Explorer |
 | Cost threshold/alert | AWS Budgets |
 | Detailed billing dataset | AWS Cost and Usage Report |
+| Categorize costs by team/project | Cost allocation tags |
 | Third-party AWS software/services | AWS Marketplace |
 | Community AWS Q&A | AWS re:Post |
-| AWS expert consulting | AWS Professional Services |
+| AWS expert transformation/consulting engagement | AWS Professional Services |
+| AWS technical solution guidance | AWS Solutions Architects |
 | Consulting/technology partner ecosystem | AWS Partner Network |
+| Third-party software vendor | APN Independent Software Vendor (ISV) |
+| External integration/migration/consulting implementer | APN consulting/system integrator |
+| Report abuse/misuse involving AWS resources | AWS Trust & Safety |
 
 # Framework flashcards
 
@@ -132,7 +142,7 @@ Use this for rapid recall. Read the requirement, cover the answer, and answer wi
 | Protect systems/data | Security |
 | Recover/perform correctly | Reliability |
 | Efficient performance as demand/tech changes | Performance Efficiency |
-| Lowest cost for business value | Cost Optimization |
+| Lowest cost for required business value | Cost Optimization |
 | Reduce environmental/resource impact | Sustainability |
 
 # EC2 pricing flashcards
@@ -141,7 +151,36 @@ Use this for rapid recall. Read the requirement, cover the answer, and answer wi
 |---|---|
 | No commitment/unpredictable | On-Demand |
 | Predictable commitment | Reserved Instances / Savings Plans |
-| Interruptible, lowest-cost batch | Spot |
+| Interruptible, low-cost batch | Spot |
+| RI can be exchanged for different config | Convertible RI |
+| RI discount across AZs in Region, no capacity reservation | Regional RI |
+| RI reserves capacity in one AZ | Zonal RI |
 | Physical host dedicated to customer | Dedicated Host |
 | Dedicated hardware without host-level control | Dedicated Instance |
-| Guarantee EC2 capacity in an AZ | Capacity Reservation |
+| Guarantee EC2 capacity | Capacity Reservation |
+
+# Root-user flashcards
+
+Recognize that root credentials can be required for high-privilege account tasks such as:
+- changing standalone-account root email/password/access keys
+- closing a standalone AWS account
+- restoring IAM admin permissions after lockout
+- activating IAM access to Billing and Cost Management
+
+Do **not** use root routinely. AWS Organizations can centrally perform some privileged actions for member accounts.
+
+# 2026 Support terminology
+
+Current live plans:
+- Basic
+- Business Support+
+- Enterprise Support
+- Unified Operations
+
+CLF-C02 Domain 4 still includes legacy/transitional names in examples:
+- Developer Support
+- Business Support
+- Enterprise On-Ramp
+- Enterprise Support
+
+Developer Support, legacy Business Support and Enterprise On-Ramp are scheduled to retire January 1, 2027. For the exam, understand support levels/resources and recognize both generations of names.
