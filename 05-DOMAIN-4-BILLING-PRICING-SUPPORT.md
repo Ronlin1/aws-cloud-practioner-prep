@@ -222,7 +222,9 @@ Marketplace for third-party software, data and services.
 Exam concepts:
 - find/deploy third-party software
 - centralized procurement and billing in supported scenarios
-- governance/entitlement capabilities
+- **cost management** capabilities
+- **governance** capabilities
+- **entitlement** capabilities
 - software/security products from independent software vendors (ISVs)
 
 Trigger:
@@ -286,8 +288,16 @@ Exam trigger:
 Think:
 > AWS Partner Network.
 
-### Why partners matter
-At exam level, benefits include access to specialized expertise, software/solutions, migration/implementation support and industry/workload experience.
+### Benefits of being an AWS Partner
+The CLF-C02 Domain 4 task statement explicitly gives examples. Recognize:
+- **partner training and certification**
+- **partner events**
+- **partner volume discounts**
+
+These are partner-program benefits, not end-customer AWS Support-plan features.
+
+### Why customers use partners
+At exam level, partners can provide specialized expertise, software/solutions, migration/implementation support and industry/workload experience.
 
 ---
 
@@ -372,6 +382,9 @@ https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 ### “Need AWS experts for a transformation engagement.”
 **AWS Professional Services**
 
+### “Which are examples of AWS Partner benefits?”
+**Training/certification, partner events, partner volume discounts**
+
 ---
 
 # Domain 4 instant recall
@@ -396,7 +409,8 @@ https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 18. Community Q&A -> **re:Post**
 19. AWS expert consulting/transformation -> **Professional Services**
 20. Partner ecosystem -> **APN**
-21. Abuse report involving AWS resources -> **AWS Trust & Safety**
+21. AWS Partner benefits -> **training/certification, events, volume discounts**
+22. Abuse report involving AWS resources -> **AWS Trust & Safety**
 
 # Official references
 
