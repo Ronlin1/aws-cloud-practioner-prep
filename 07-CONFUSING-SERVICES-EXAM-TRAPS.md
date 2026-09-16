@@ -2,7 +2,7 @@
 
 This file is one of the highest-value things to revise before the exam.
 
-# CloudWatch vs CloudTrail vs Config
+# CloudWatch vs CloudTrail vs Config vs IAM Credential Report
 
 ## CloudWatch
 - metrics
@@ -23,6 +23,38 @@ Question: “Who terminated this EC2 instance?” -> **CloudTrail**
 - configuration/compliance rules
 
 Question: “Was this S3 bucket configured as public?” -> **AWS Config**
+
+## IAM Credential Report
+- IAM user credential status
+- password/access-key/MFA information
+
+Question: “Which IAM users have MFA or stale access keys?” -> **IAM credential report**
+
+---
+
+# AWS managed vs Customer managed vs Inline IAM policies
+
+- **AWS managed** -> created and maintained by AWS; reusable
+- **Customer managed** -> created/edited by customer; reusable
+- **Inline** -> embedded directly in one user/group/role; one-to-one
+
+Trap: an AWS managed policy is not a policy that the customer edits.
+
+---
+
+# Secrets Manager vs Systems Manager Parameter Store
+
+## Secrets Manager
+Purpose-built for secrets/credentials such as database passwords, API keys and tokens; supports dedicated secret-management features such as rotation.
+
+## Parameter Store
+Configuration/key-value parameters; supports `String`, `StringList`, and encrypted `SecureString` values.
+
+Exam reflex:
+- rotating DB password/API secret -> **Secrets Manager**
+- endpoint URL/environment/config value/SecureString parameter -> **Parameter Store**
+
+AWS recommends Secrets Manager when the data is truly a credential/secret requiring purpose-built secret management.
 
 ---
 
@@ -91,11 +123,12 @@ Mnemonic:
 
 ---
 
-# IAM vs IAM Identity Center vs Cognito
+# IAM vs IAM Identity Center vs Cognito vs Federation
 
 - **IAM** -> AWS identities, roles, policies, resource permissions
-- **IAM Identity Center** -> workforce access across accounts/apps
+- **IAM Identity Center** -> workforce access across AWS accounts/apps
 - **Cognito** -> end users of your web/mobile application
+- **Federation** -> use external identity provider to obtain temporary AWS access
 
 ---
 
@@ -121,7 +154,7 @@ Mnemonic:
 - **Direct Connect** -> dedicated network connection
 - **VPN** -> encrypted tunnel
 
-A company can also combine the two in real-world designs, but exam questions usually distinguish the primary requirement.
+A company can combine the two in real-world designs, but exam questions usually distinguish the primary requirement.
 
 ---
 
@@ -205,13 +238,13 @@ They are commonly used together but are not the same service/function.
 # Trusted Advisor vs Compute Optimizer
 
 - **Trusted Advisor** -> broad AWS best-practice recommendations/checks
-- **Compute Optimizer** -> specific right-sizing/resource recommendations for supported resources based on utilization
+- **Compute Optimizer** -> right-sizing/resource recommendations for supported resources based on utilization
 
 ---
 
 # Health Dashboard vs CloudWatch
 
-- **Health Dashboard** -> AWS events impacting your account/resources
+- **Health Dashboard / AWS Health** -> AWS events impacting your account/resources
 - **CloudWatch** -> workload/service operational metrics/logs/alarms
 
 ---
@@ -220,6 +253,13 @@ They are commonly used together but are not the same service/function.
 
 - **Artifact** -> AWS compliance reports/agreements
 - **Audit Manager** -> automate collection/organization of audit evidence
+
+---
+
+# Service Catalog vs Marketplace
+
+- **Service Catalog** -> organization's governed catalog of approved products users can provision
+- **Marketplace** -> discover/procure third-party software, data and services
 
 ---
 
@@ -271,15 +311,50 @@ Operational Excellence, Security, Reliability, Performance Efficiency, Cost Opti
 ### CAF perspectives
 Business, People, Governance, Platform, Security, Operations.
 
+CAF outcome examples from the exam guide include reduced business risk, improved ESG performance, increased revenue and increased operational efficiency.
+
 ---
 
-# Spot vs On-Demand vs Reserved/Savings
+# On-Demand vs Spot vs Reserved vs Savings Plans
 
-- unpredictable/no commitment -> On-Demand
-- interruptible/fault-tolerant/lowest cost -> Spot
-- predictable long-running/commitment -> Reserved or Savings Plans
+- unpredictable/no commitment -> **On-Demand**
+- interruption-tolerant/very low-cost spare capacity -> **Spot**
+- predictable EC2 commitment -> **Reserved Instance**
+- predictable eligible compute-spend commitment with broader flexibility -> **Savings Plans**
 
-Trap: Reserved Instances and Capacity Reservations solve different primary problems. RI is a pricing/commitment construct; Capacity Reservation ensures capacity in an AZ.
+---
+
+# Standard vs Convertible Reserved Instance
+
+- **Standard RI** -> no exchange to a different RI configuration; less flexible
+- **Convertible RI** -> can be exchanged for a different Convertible RI configuration of equal or greater value
+
+---
+
+# Regional vs Zonal Reserved Instance
+
+## Regional RI
+- discount can apply across AZs in selected Region
+- does **not** reserve capacity
+- eligible Linux/Unix default-tenancy regional RIs can provide instance-size flexibility
+
+## Zonal RI
+- scoped to one AZ
+- **reserves capacity in that AZ**
+- no AZ flexibility
+- no instance-size flexibility
+
+Important correction to a common oversimplification:
+> Not every Reserved Instance is “discount only.” A **Zonal RI includes a capacity reservation**. A Regional RI does not.
+
+---
+
+# Reserved Instance vs On-Demand Capacity Reservation
+
+- **Reserved Instance** -> commitment-based billing discount; Zonal RI also reserves capacity
+- **On-Demand Capacity Reservation** -> reserve EC2 capacity without inherently creating a pricing discount commitment
+
+Eligible Savings Plans or Regional RI discounts can still apply to matching usage in a Capacity Reservation.
 
 ---
 
@@ -287,7 +362,30 @@ Trap: Reserved Instances and Capacity Reservations solve different primary probl
 
 - **Dedicated Host** -> physical host dedicated to you, licensing/host visibility
 - **Dedicated Instance** -> instance on dedicated hardware, less host-level control
-- **Capacity Reservation** -> reserve capacity in an AZ
+- **Capacity Reservation** -> reserve EC2 capacity for specified attributes
+
+---
+
+# Support Center vs re:Post vs Health vs Trust & Safety
+
+- **Support Center** -> create/manage AWS Support cases according to entitlement
+- **re:Post** -> AWS community Q&A/knowledge
+- **AWS Health** -> AWS events affecting your resources/account
+- **Trust & Safety** -> report abuse/misuse involving AWS resources
+
+---
+
+# Professional Services vs Solutions Architects vs APN
+
+- **AWS Professional Services** -> AWS expert engagement for transformations/complex initiatives
+- **AWS Solutions Architects** -> AWS technical solution guidance
+- **AWS Partner Network (APN)** -> external AWS consulting/technology partner ecosystem
+
+APN examples:
+- ISV -> software vendor
+- system integrator/consulting partner -> migration/integration/implementation help
+
+AWS Partner benefits explicitly called out by the CLF-C02 guide include partner training/certification, partner events and partner volume discounts.
 
 ---
 
