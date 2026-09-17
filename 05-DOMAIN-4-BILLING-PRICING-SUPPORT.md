@@ -201,8 +201,8 @@ Defined and applied by AWS for supported resources/use cases.
 
 ## User-defined cost allocation tags
 Tags you create/apply, such as:
-- `Project=FarmZenith`
-- `Department=DataEngineering`
+- `Project=WebApp`
+- `Department=Engineering`
 - `Environment=Production`
 
 Cost allocation tags must be activated for use in supported billing/cost-management reporting.

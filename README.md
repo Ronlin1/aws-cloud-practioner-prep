@@ -1,123 +1,215 @@
-# AWS Certified Cloud Practitioner CLF-C02 — 48-Hour Exam Prep
+<div align="center">
 
-> **Goal:** Pass CLF-C02 in 2 days by studying the exam blueprint, not by trying to become an AWS engineer.
+# ☁️ AWS Certified Cloud Practitioner — CLF-C02 Prep
 
-This repository is deliberately **exam-scope-first**. It prioritizes knowledge AWS explicitly tests and removes implementation depth that AWS explicitly says is outside the target candidate's exam tasks.
+### A focused, modern, exam-first study repository built for clarity, speed, and confidence.
 
-**Deep validation refresh:** 2026-09-16. See [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md).
+`CLF-C02` · `65 Questions` · `90 Minutes` · `4 Domains` · `Validated 2026-09-17`
 
-## Exam facts
-
-- Exam: **AWS Certified Cloud Practitioner (CLF-C02)**
-- Level: Foundational
-- Duration: **90 minutes**
-- Questions: **65 total**
-- Scored questions: **50**
-- Unscored questions: **15** (not identified)
-- Formats: multiple choice + multiple response
-- Passing score: **700 / 1000 scaled**
-- Unanswered questions count as incorrect; there is no penalty for guessing.
-
-## Current official weighting
-
-| Domain | Weight | 48-hour priority |
-|---|---:|---|
-| 1. Cloud Concepts | 24% | High |
-| 2. Security & Compliance | 30% | **Very High** |
-| 3. Cloud Technology & Services | 34% | **Very High** |
-| 4. Billing, Pricing & Support | 12% | Medium, relatively direct marks |
-
-**64% of scored content is Domains 2 + 3.** Spend most of your time there.
-
-## What AWS says is outside the target candidate's expected tasks
-
-Do **not** spend these 48 hours learning deep implementation:
-
-- Coding
-- Designing cloud architectures
-- Troubleshooting
-- Implementation
-- Load and performance testing
-
-You need to know **what a service/concept is, why it exists, when to choose it, and what it is confused with**.
-
-## Read in this order
-
-1. [`00-EXAM-BLUEPRINT.md`](00-EXAM-BLUEPRINT.md) — exactly what AWS says can be tested
-2. [`01-48-HOUR-PLAN.md`](01-48-HOUR-PLAN.md) — what to do between now and exam time
-3. [`03-DOMAIN-2-SECURITY-COMPLIANCE.md`](03-DOMAIN-2-SECURITY-COMPLIANCE.md) — 30%
-4. [`04-DOMAIN-3-TECHNOLOGY-SERVICES.md`](04-DOMAIN-3-TECHNOLOGY-SERVICES.md) — 34%
-5. [`02-DOMAIN-1-CLOUD-CONCEPTS.md`](02-DOMAIN-1-CLOUD-CONCEPTS.md) — 24%
-6. [`05-DOMAIN-4-BILLING-PRICING-SUPPORT.md`](05-DOMAIN-4-BILLING-PRICING-SUPPORT.md) — 12%
-7. [`06-SERVICE-CHEAT-SHEET.md`](06-SERVICE-CHEAT-SHEET.md) — rapid recognition
-8. [`07-CONFUSING-SERVICES-EXAM-TRAPS.md`](07-CONFUSING-SERVICES-EXAM-TRAPS.md)
-9. [`practice/QUESTIONS.md`](practice/QUESTIONS.md) — 50-question weighted mock
-10. [`practice/TARGETED-GAPS-QUESTIONS.md`](practice/TARGETED-GAPS-QUESTIONS.md) — 30 questions on explicit blueprint gaps
-11. [`practice/ANSWERS.md`](practice/ANSWERS.md)
-12. [`practice/TARGETED-GAPS-ANSWERS.md`](practice/TARGETED-GAPS-ANSWERS.md)
-13. [`08-LAST-MINUTE-CRAM.md`](08-LAST-MINUTE-CRAM.md) — final 2–3 hours
-14. [`09-RESOURCES.md`](09-RESOURCES.md) — validated official resources
-15. [`10-OUT-OF-SCOPE-SKIP.md`](10-OUT-OF-SCOPE-SKIP.md) — things not worth studying now
-16. [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md) — what was checked and patched
-
-## The one rule for every AWS service
-
-For each service, be able to answer:
-
-1. **What problem does it solve?**
-2. **What exam sentence should make me choose it?**
-3. **Which service is it commonly confused with?**
-4. **What does it NOT do?**
-
-Example:
-
-> **CloudTrail** — records AWS API/account activity.  
-> Trigger: “Who changed/deleted this AWS resource?”  
-> Confused with: CloudWatch and Config.  
-> Not primarily: CPU/performance monitoring.
-
-## 48-hour success target
-
-Before exam time, you should be able to:
-
-- Explain all four official domains without notes.
-- Identify the use case for every high-priority in-scope service.
-- Instantly solve the comparison pairs in `07-CONFUSING-SERVICES-EXAM-TRAPS.md`.
-- Handle explicit task-statement details in `practice/TARGETED-GAPS-QUESTIONS.md`.
-- Complete the **AWS Certification Official Practice Question Set**.
-- Use the **Official Pretest** to identify weak areas.
-- If you have Skill Builder subscription access, take the **Official Practice Exam**.
-- Repeatedly score around **80–85%+ on quality practice sets as a study heuristic**, not as an AWS score conversion.
-
-## Current Skill Builder strategy
-
-With only two days:
-
-**Prioritize:**
-- official exam guide
-- Official Pretest
-- Official Practice Question Set
-- free Exam Prep digital course
-- targeted weak-area refresh
-- official practice exam if available
-
-**Do not feel compelled to complete the full Cloud Practitioner Essentials course end-to-end.** AWS currently lists it at about 12h45m; use it selectively for weak topics.
-
-See `09-RESOURCES.md` for validated entry links.
-
-## Source of truth
-
-AWS changes services, learning URLs and support offerings. The source of truth for this repo is the current AWS CLF-C02 exam guide and its official scope pages:
-
-- Official exam page: https://aws.amazon.com/certification/certified-cloud-practitioner/
-- Official CLF-C02 exam guide: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html
-- Technologies/concepts: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-technologies-concepts.html
-- In-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html
-- Out-of-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-out-of-scope-services.html
-- Skill Builder CLF-C02 exam prep hub: https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02
-
-> AWS says the in-scope and out-of-scope lists are **non-exhaustive and subject to change**. The official task statements therefore take priority over memorizing a service list.
+</div>
 
 ---
 
-Last deep validation refresh: **2026-09-16**.
+## Why this repository exists
+
+AWS is broad. The Cloud Practitioner exam is not.
+
+This repository is designed to help learners focus on **what CLF-C02 actually tests**, recognize AWS services quickly, avoid common exam traps, and use official AWS resources without getting lost in unnecessary implementation detail.
+
+Whether you have **48 hours** or several weeks, the goal is the same:
+
+> Learn the exam blueprint, understand the core AWS ideas, practice scenario recognition, and spend your time where it matters most.
+
+This is an independently maintained community study resource. It is **not affiliated with, endorsed by, or sponsored by Amazon Web Services (AWS)**.
+
+---
+
+## 🚀 Start here
+
+| Your situation | Recommended path |
+|---|---|
+| **Exam in 48 hours** | Start with [`01-48-HOUR-PLAN.md`](01-48-HOUR-PLAN.md), then focus heavily on Domains 2 and 3 |
+| **A few days to a few weeks** | Follow the domain files in order, then drill comparisons and practice questions |
+| **Already studied AWS** | Use [`06-SERVICE-CHEAT-SHEET.md`](06-SERVICE-CHEAT-SHEET.md), [`07-CONFUSING-SERVICES-EXAM-TRAPS.md`](07-CONFUSING-SERVICES-EXAM-TRAPS.md), and the practice sets |
+| **Want official links only** | Go straight to [`resources/`](resources/README.md) |
+| **Want modern AWS AI/GenAI too** | Read [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) after the exam-focused material |
+
+---
+
+## 🧭 Exam snapshot
+
+| Domain | Weight | Study priority |
+|---|---:|---|
+| **1. Cloud Concepts** | **24%** | High |
+| **2. Security & Compliance** | **30%** | Very High |
+| **3. Cloud Technology & Services** | **34%** | Very High |
+| **4. Billing, Pricing & Support** | **12%** | Medium |
+
+**Domains 2 + 3 = 64% of scored content.**
+
+Current official format:
+
+- **65 total questions**
+- **50 scored + 15 unscored**
+- **90 minutes**
+- Multiple choice and multiple response
+- Passing score: **700/1000 scaled**
+- No penalty for guessing; unanswered questions are incorrect
+
+> Practice percentages in this repository are **study-readiness heuristics only**. They are not conversions to AWS's scaled score.
+
+---
+
+## 📚 Repository map
+
+### 1. Learn
+
+- [`00-EXAM-BLUEPRINT.md`](00-EXAM-BLUEPRINT.md) — official blueprint translated into what to know
+- [`02-DOMAIN-1-CLOUD-CONCEPTS.md`](02-DOMAIN-1-CLOUD-CONCEPTS.md) — cloud value, Well-Architected, CAF, migration, economics
+- [`03-DOMAIN-2-SECURITY-COMPLIANCE.md`](03-DOMAIN-2-SECURITY-COMPLIANCE.md) — shared responsibility, IAM, security, compliance
+- [`04-DOMAIN-3-TECHNOLOGY-SERVICES.md`](04-DOMAIN-3-TECHNOLOGY-SERVICES.md) — compute, storage, databases, networking, analytics, AI/ML, integration
+- [`05-DOMAIN-4-BILLING-PRICING-SUPPORT.md`](05-DOMAIN-4-BILLING-PRICING-SUPPORT.md) — pricing, cost tools, Organizations, Support, partner resources
+
+### 2. Drill
+
+- [`06-SERVICE-CHEAT-SHEET.md`](06-SERVICE-CHEAT-SHEET.md) — rapid service recognition
+- [`07-CONFUSING-SERVICES-EXAM-TRAPS.md`](07-CONFUSING-SERVICES-EXAM-TRAPS.md) — high-value comparison pairs
+- [`08-LAST-MINUTE-CRAM.md`](08-LAST-MINUTE-CRAM.md) — condensed final review
+
+### 3. Practice
+
+- [`practice/QUESTIONS.md`](practice/QUESTIONS.md) — 50-question mock weighted to the official domains
+- [`practice/ANSWERS.md`](practice/ANSWERS.md) — explanations and mistake diagnosis
+- [`practice/TARGETED-GAPS-QUESTIONS.md`](practice/TARGETED-GAPS-QUESTIONS.md) — 30 questions on easy-to-miss blueprint details
+- [`practice/TARGETED-GAPS-ANSWERS.md`](practice/TARGETED-GAPS-ANSWERS.md) — explanations for the targeted drill
+
+### 4. Validate
+
+- [`10-OUT-OF-SCOPE-SKIP.md`](10-OUT-OF-SCOPE-SKIP.md) — material not worth deep study for CLF-C02
+- [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md) — what was checked against current AWS sources
+- [`resources/VALIDATION-NOTES.md`](resources/VALIDATION-NOTES.md) — latest validation notes and methodology
+
+### 5. Go deeper
+
+- [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) — official AWS source links
+- [`resources/SKILL-BUILDER.md`](resources/SKILL-BUILDER.md) — current AWS learning and exam-prep entry points
+- [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) — current AI/GenAI services, clearly separated from CLF-C02 scope
+- [`resources/COMMUNITY-RESOURCES.md`](resources/COMMUNITY-RESOURCES.md) — vetted supplemental community material
+
+---
+
+## 🧠 The one rule for every AWS service
+
+For every service, be able to answer four things:
+
+1. **What problem does it solve?**
+2. **What exam phrase should make me choose it?**
+3. **What is it commonly confused with?**
+4. **What does it not primarily do?**
+
+Example:
+
+> **CloudTrail**  
+> **Does:** records AWS API and account activity  
+> **Trigger:** “Who changed or deleted this AWS resource?”  
+> **Confused with:** CloudWatch and Config  
+> **Not primarily for:** CPU/performance monitoring
+
+That pattern is much more useful than memorizing long service descriptions.
+
+---
+
+## 🎯 What this repository intentionally does not do
+
+AWS explicitly says the CLF-C02 target candidate is not expected to perform deep:
+
+- coding
+- cloud architecture design
+- troubleshooting
+- implementation
+- load/performance testing
+
+So this repository does **not** spend your study time on advanced CLI syntax, Kubernetes administration, deep VPC routing labs, production IaC, database tuning, or long implementation walkthroughs unless they directly support an exam concept.
+
+Those are valuable real-world skills, but they are not the fastest route to CLF-C02 readiness.
+
+---
+
+## 🤖 Modern AWS AI without exam-scope confusion
+
+AWS evolves quickly. This repository separates **current AWS technology** from **current CLF-C02 requirements**.
+
+The current explicit CLF-C02 Machine Learning list includes services such as:
+
+- Amazon Comprehend
+- Amazon Kendra
+- Amazon Lex
+- Amazon Polly
+- Amazon Q
+- Amazon Rekognition
+- Amazon SageMaker AI
+- Amazon Textract
+- Amazon Transcribe
+- Amazon Translate
+
+Modern topics such as **Amazon Bedrock, foundation models, RAG, Bedrock Knowledge Bases, Bedrock Guardrails, and Amazon Bedrock AgentCore** are useful AWS knowledge, but they are kept in [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) and are **not presented as CLF-C02 requirements** unless AWS adds them to the official scope.
+
+---
+
+## 🔐 Privacy and public-repo policy
+
+This repository is intended to be safe to share publicly.
+
+- Examples are generic rather than tied to a person, employer, school, or private project.
+- No exam dumps or leaked questions are accepted.
+- Corrections should cite official AWS documentation wherever possible.
+- Historical Git commits can preserve old text even after the latest branch is cleaned; see [`DISCLAIMER.md`](DISCLAIMER.md) for that limitation.
+
+---
+
+## ✅ Source-of-truth hierarchy
+
+When sources disagree, use this order:
+
+1. Official CLF-C02 Exam Guide
+2. Official Domain 1–4 task statements
+3. Official Technologies and Concepts page
+4. Official In-Scope / Out-of-Scope service lists
+5. Current AWS service documentation
+6. AWS Skill Builder / Certification Prep
+7. Community material only as supplemental guidance
+
+The AWS in-scope and out-of-scope lists are explicitly **non-exhaustive and subject to change**, so the current task statements remain the most important reference.
+
+See [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) for the validated links.
+
+---
+
+## 🤝 Contributing
+
+Found a stale AWS service name, broken official link, changed exam scope, or confusing explanation?
+
+Contributions are welcome. Please use [`CONTRIBUTING.md`](CONTRIBUTING.md) and include an official AWS source for scope-sensitive corrections whenever possible.
+
+Do **not** submit exam dumps, memorized live-exam questions, or content presented as leaked/real exam material.
+
+---
+
+## ✨ A note to learners
+
+You do not need to know every AWS service in depth to pass CLF-C02.
+
+You need to understand the cloud fundamentals, recognize the major services, distinguish the common look-alikes, and read scenario wording carefully.
+
+**Learn the map. Drill the distinctions. Practice the scenarios. Then go into the exam calm and prepared.**
+
+---
+
+### Suggested GitHub repository description
+
+> **Exam-first AWS Certified Cloud Practitioner (CLF-C02) prep: concise notes, service cheat sheets, traps, original practice questions, official AWS resources, and modern AI guidance.**
+
+---
+
+**Last deep validation:** 2026-09-17  
+**Maintained independently. Not affiliated with Amazon Web Services.**

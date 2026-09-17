@@ -183,6 +183,8 @@ Organizations can centrally perform some privileged actions for member accounts.
 - Textract = document extraction
 - Amazon Q = generative-AI assistant family
 
+**Current scope guardrail:** Amazon Bedrock and Amazon Bedrock AgentCore are useful modern AWS AI services but are **not currently on the explicit CLF-C02 in-scope list**. Do not spend last-minute CLF-C02 cram time on them.
+
 # Integration
 - SQS = queue
 - SNS = pub/sub fan-out

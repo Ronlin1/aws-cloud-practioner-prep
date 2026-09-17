@@ -184,3 +184,9 @@ CLF-C02 Domain 4 still includes legacy/transitional names in examples:
 - Enterprise Support
 
 Developer Support, legacy Business Support and Enterprise On-Ramp are scheduled to retire January 1, 2027. For the exam, understand support levels/resources and recognize both generations of names.
+
+# AI scope guardrail
+
+The current explicit CLF-C02 Machine Learning list includes **Comprehend, Kendra, Lex, Polly, Amazon Q, Rekognition, SageMaker AI, Textract, Transcribe, and Translate**.
+
+Modern services such as **Amazon Bedrock and Amazon Bedrock AgentCore are not currently on the explicit CLF-C02 in-scope list**. Learn them after the exam or from [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md), not as required cram content.
