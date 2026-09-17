@@ -1,13 +1,15 @@
 # 11 — Deep Validation Audit — CLF-C02
 
-**Validation date:** 2026-09-16  
-**Objective:** verify this repository against the current AWS Certified Cloud Practitioner CLF-C02 exam guide, domain task statements, technologies/concepts list, in-scope/out-of-scope service lists, current Skill Builder preparation guidance, and current AWS Support documentation.
+**Validation date:** 2026-09-17  
+**Objective:** verify this repository against the current AWS Certified Cloud Practitioner CLF-C02 exam guide, task statements, technologies/concepts list, in-scope/out-of-scope service lists, current Skill Builder preparation guidance, AWS Support documentation, and the current AWS AI/GenAI ecosystem.
+
+---
 
 # Validation result
 
-The repository is structured around the **current CLF-C02 blueprint**, not around an old course syllabus.
+The repository is aligned to the **current CLF-C02 blueprint** and keeps broader modern AWS material separate from exam requirements.
 
-Official exam facts validated:
+Validated exam facts:
 - 65 total questions
 - 50 scored + 15 unscored
 - 90 minutes
@@ -18,169 +20,84 @@ Official exam facts validated:
 - Domain 3: 34%
 - Domain 4: 12%
 
-AWS explicitly lists these candidate tasks as out of scope:
+AWS explicitly says the target candidate is not expected to perform deep:
 - coding
-- designing cloud architecture
+- cloud architecture design
 - troubleshooting
 - implementation
 - load/performance testing
 
-The repo therefore prioritizes scenario recognition, concepts and service selection rather than hands-on implementation depth.
+The repository therefore prioritizes **recognition, differentiation, responsibility, service selection, business value, pricing, and support choices** rather than implementation depth.
 
 ---
 
-# Domain-by-domain coverage audit
+# Domain 1 — Cloud Concepts — 24%
 
-## Domain 1 — Cloud Concepts — 24%
-
-### Task 1.1 Benefits of AWS Cloud
 Covered:
-- global reach/infrastructure benefits
-- high availability
-- elasticity
+- AWS Cloud value proposition
+- global infrastructure benefits
+- scalability vs elasticity
 - agility
-- scalability
-- economies of scale
+- high availability / fault tolerance / DR
 - fixed vs variable expenditure
-
-Primary files:
-- `02-DOMAIN-1-CLOUD-CONCEPTS.md`
-- `08-LAST-MINUTE-CRAM.md`
-
-### Task 1.2 Design principles
-Covered:
-- six Well-Architected pillars
-- scenario trigger for each pillar
-- CAF vs Well-Architected distinction
-
-### Task 1.3 Migration benefits/strategies
-Covered:
-- migration business/technical reasons
+- Well-Architected six pillars
 - AWS CAF six perspectives
-- 7 Rs concepts
-- migration-service recognition
-- Snow Family offline transfer
-
-### Task 1.4 Cloud economics
-Covered:
-- fixed/variable cost
-- on-prem cost categories
-- BYOL/license included
+- CAF business-outcome examples
+- migration strategies
+- cloud economics
 - rightsizing
 - automation
-- economies of scale
+- BYOL / license-included concepts
 
-**Domain 1 status: covered at CLF-C02 depth.**
+**Status:** covered at CLF-C02 depth.
 
 ---
 
-## Domain 2 — Security & Compliance — 30%
+# Domain 2 — Security & Compliance — 30%
 
-### Task 2.1 Shared Responsibility
 Covered:
-- security OF vs IN the cloud
-- EC2 customer responsibilities
-- RDS/Lambda increased AWS management responsibility
-
-### Task 2.2 Security, governance and compliance
-Covered:
-- encryption at rest/in transit
+- Shared Responsibility Model
+- EC2 vs managed-service responsibility differences
+- IAM users, groups, roles, policies
+- AWS-managed vs customer-managed vs inline policies
+- least privilege
+- MFA
+- password/access-key concepts
+- IAM Identity Center
+- federation and cross-account roles
+- root-user protection and root-only task examples
+- IAM credential reports
+- encryption at rest / in transit
+- KMS / CloudHSM / ACM
+- Secrets Manager / Parameter Store recognition
 - CloudWatch / CloudTrail / Config
 - Artifact / Audit Manager
-- GuardDuty / Inspector / Security Hub / Shield
-- compliance principle
-- access/security reporting concepts
-
-### Task 2.3 Access management
-Validated and explicitly expanded during this audit:
-- IAM users/groups/roles/policies
-- AWS managed vs customer managed vs inline policies
-- least privilege
-- access keys vs passwords
-- IAM password policy
-- MFA
-- IAM Identity Center
-- federation
-- cross-account roles
-- root-user protection
-- root-only task examples
-- IAM credential report
-- Secrets Manager
-- Systems Manager Parameter Store / SecureString
-
-### Task 2.4 Security resources
-Covered:
-- WAF / Shield / Firewall Manager
 - GuardDuty / Inspector / Macie / Detective / Security Hub
-- KMS / CloudHSM / ACM / Secrets Manager
-- Marketplace third-party security software
-- Trusted Advisor
-- AWS security/support knowledge resources
+- WAF / Shield / Firewall Manager
+- Cognito / Directory Service / RAM
+- Organizations / SCPs / Control Tower
 
-**Domain 2 status: covered at CLF-C02 depth after audit patch.**
+**Status:** covered at CLF-C02 depth.
 
 ---
 
-## Domain 3 — Cloud Technology & Services — 34%
+# Domain 3 — Cloud Technology & Services — 34%
 
-### Task 3.1 Deploy/operate AWS
-Covered:
-- Console
-- CLI
-- APIs/SDKs
-- Infrastructure as Code
-- CloudFormation
-- one-time/manual vs repeatable/automated operation recognition
-- cloud/on-prem/hybrid deployment models
+Covered at the appropriate foundational recognition level:
 
-### Task 3.2 Global infrastructure
-Covered:
-- Regions
-- Availability Zones
-- edge locations
-- Multi-AZ vs Multi-Region
-- Region selection factors
-
-### Task 3.3 Compute
-Covered:
+## Compute and containers
 - EC2
-- EC2 instance categories
 - Auto Scaling
-- Elastic Load Balancing
-- ECS / EKS / Fargate / ECR
+- ELB
 - Lambda
 - Batch
 - Elastic Beanstalk
 - Lightsail
 - Outposts
+- ECR / ECS / EKS / Fargate
 
-### Task 3.4 Databases
-Covered:
-- RDS
-- Aurora
-- DynamoDB
-- ElastiCache
-- DocumentDB
-- Neptune
-- DMS
-- SCT
-- Redshift distinction
-
-### Task 3.5 Networking
-Covered:
-- VPC / subnets / gateways / route-table concept
-- Security Groups vs NACLs
-- Route 53
-- CloudFront
-- VPN / Direct Connect
-- Transit Gateway
-- PrivateLink
-- Global Accelerator
-- API Gateway
-
-### Task 3.6 Storage
-Covered:
-- S3 + storage classes + lifecycle
+## Storage
+- S3 and storage classes
 - EBS
 - Instance Store
 - EFS
@@ -189,8 +106,29 @@ Covered:
 - Backup
 - Elastic Disaster Recovery
 
-### Task 3.7 AI/ML and analytics
-Covered at recognition level:
+## Databases
+- RDS
+- Aurora
+- DynamoDB
+- ElastiCache
+- DocumentDB
+- Neptune
+- Redshift distinction
+- DMS / SCT
+
+## Networking
+- VPC
+- subnets / gateway / route concepts
+- security groups vs NACLs
+- Route 53
+- CloudFront
+- Direct Connect / VPN
+- Transit Gateway
+- PrivateLink
+- Global Accelerator
+- API Gateway
+
+## Analytics
 - Athena
 - Glue
 - EMR
@@ -198,156 +136,114 @@ Covered at recognition level:
 - QuickSight
 - Redshift
 - OpenSearch
-- SageMaker AI
-- Comprehend
-- Kendra
-- Lex
-- Polly
-- Transcribe
-- Translate
-- Rekognition
-- Textract
-- Amazon Q
 
-### Task 3.8 Other in-scope service categories
-Covered at recognition level:
+## Current explicit CLF-C02 Machine Learning list
+The current official in-scope page explicitly lists:
+- Amazon Comprehend
+- Amazon Kendra
+- Amazon Lex
+- Amazon Polly
+- Amazon Q
+- Amazon Rekognition
+- Amazon SageMaker AI
+- Amazon Textract
+- Amazon Transcribe
+- Amazon Translate
+
+These are taught at recognition/use-case level.
+
+## Other in-scope categories
 - SQS / SNS / EventBridge / Step Functions
-- SES / Connect
+- Connect / SES
 - CodeBuild / CodePipeline / X-Ray
 - WorkSpaces / AppStream 2.0 / Secure Browser
 - Amplify / AppSync
 - IoT Core
-- Systems Manager / Service Catalog / Service Quotas / License Manager
+- Systems Manager
+- Service Catalog
+- Service Quotas
+- License Manager
 - migration services
 
-**Domain 3 status: covered at CLF-C02 recognition depth.**
+**Status:** covered at CLF-C02 recognition depth.
 
 ---
 
-## Domain 4 — Billing, Pricing & Support — 12%
+# Domain 4 — Billing, Pricing & Support — 12%
 
-### Task 4.1 Pricing models
-Validated and explicitly expanded during this audit:
+Covered:
 - On-Demand
 - Reserved Instances
 - Savings Plans
 - Spot
-- Dedicated Hosts
-- Dedicated Instances
+- Dedicated Hosts / Dedicated Instances
 - Capacity Reservations
-- Standard vs Convertible RIs
-- Regional vs Zonal RIs
-- RI Availability Zone / instance-size flexibility concept
-- RI/Savings Plans discount sharing in AWS Organizations
-- storage-tier cost logic
-- inbound/outbound/cross-Region transfer concept
-
-### Task 4.2 Billing and cost management
-Covered:
+- Standard vs Convertible RI
+- Regional vs Zonal RI
+- RI flexibility concepts
+- Organizations discount sharing
+- data-transfer cost concepts
+- S3 storage-tier cost logic
 - Pricing Calculator
 - Cost Explorer
 - Budgets
 - Cost and Usage Report
-- Organizations consolidated billing
-- AWS-generated vs user-defined cost allocation tags
-- tag activation for cost analysis/reporting
-- Marketplace billing/procurement concept
-
-### Task 4.3 Technical resources and support
-Validated and explicitly expanded during this audit:
-- Documentation
-- Whitepapers
-- Prescriptive Guidance
-- Knowledge Center / re:Post
-- Support Center
+- cost allocation tag types
+- Marketplace
+- consolidated billing
+- documentation / whitepapers / Prescriptive Guidance
+- re:Post / Knowledge Center
 - Trusted Advisor
-- Health Dashboard / AWS Health API
+- AWS Health
 - Trust & Safety
 - Professional Services
 - Solutions Architects
 - AWS Partner Network
-- ISVs vs consulting/system-integration partners
-- Marketplace
-- current and legacy/transitional Support plan terminology
+- partner-benefit examples
+- current-vs-legacy Support terminology
 
-**Domain 4 status: covered after audit patch.**
-
----
-
-# In-scope service-list audit
-
-The current official in-scope list was cross-checked category by category against this repo.
-
-High-level categories confirmed:
-- Analytics
-- Application Integration
-- Business Applications
-- Cloud Financial Management
-- Compute
-- Containers
-- Customer Enablement
-- Database
-- Developer Tools
-- End User Computing
-- Frontend Web and Mobile
-- Internet of Things
-- Machine Learning
-- Management and Governance
-- Migration and Transfer
-- Networking and Content Delivery
-- Security, Identity, and Compliance
-- Serverless
-- Storage
-
-The repo teaches high-frequency/core services in detail and lower-frequency in-scope services primarily at **recognition level**, which matches the foundational exam target.
+**Status:** covered at CLF-C02 depth.
 
 ---
 
-# Out-of-scope audit
+# In-scope / out-of-scope audit
 
-`10-OUT-OF-SCOPE-SKIP.md` was cross-checked against the current AWS out-of-scope page.
+The current official service lists were rechecked during the public refresh.
 
-Examples intentionally excluded from deep study include:
-- Amazon MSK
-- Amazon Timestream for LiveAnalytics
-- AWS App Runner
-- AWS Billing Conductor
-- Amazon Keyspaces
-- Amazon MemoryDB
-- AWS CodeArtifact
-- AWS CodeDeploy
-- AWS CloudShell
-- IoT Greengrass
-- Amazon Personalize
-- VPC Lattice
-- AWS Network Firewall
-- Amazon FSx for Lustre
+Important rule from AWS:
 
-Important: AWS says the out-of-scope list is **non-exhaustive and subject to change**, so official task statements remain the primary scope authority.
+> The in-scope and out-of-scope lists are non-exhaustive and subject to change.
+
+Therefore:
+- the task statements remain the primary authority
+- explicit service lists are important but not the only source
+- the repository avoids deep study of services explicitly listed out of scope
+
+See:
+- `10-OUT-OF-SCOPE-SKIP.md`
+- `resources/OFFICIAL-AWS.md`
 
 ---
 
 # Skill Builder validation
 
-Current AWS preparation guidance was re-checked.
+Current AWS Cloud Practitioner preparation guidance still recommends:
+1. review the exam guide
+2. use the Official Practice Question Set
+3. use the Official Pretest to identify gaps
+4. refresh weak topics
+5. review/practice exam-style questions
+6. use the Official Practice Exam where available
 
-AWS recommends:
-1. Review exam guide.
-2. Use Official Practice Question Set.
-3. Use Official Pretest to identify gaps.
-4. Refresh weak topics.
-5. Review/practice exam-style questions.
-6. Use Official Practice Exam if subscription access is available.
+The repository links to durable exam-prep hubs rather than depending on stale direct course IDs.
 
-Current Cloud Practitioner Essentials listing was validated as a long foundational course, about **12h45m** and last updated May 15, 2026. With a 48-hour deadline, the repo recommends targeted use rather than mandatory full-course completion.
-
-The old direct Skill Builder URL for the Official Practice Question Set was found to be stale and was removed. The repo now points to the current certification page/exam-prep hub as the durable entry point.
+See `resources/SKILL-BUILDER.md`.
 
 ---
 
-# AWS Support 2026 transition validation
+# AWS Support transition validation
 
-This was a stale-material risk and received special validation.
+This remains a stale-material risk in 2026.
 
 Current AWS Support documentation lists:
 - Basic
@@ -355,22 +251,35 @@ Current AWS Support documentation lists:
 - Enterprise Support
 - Unified Operations
 
-AWS states these legacy plans retire January 1, 2027:
-- Developer Support
-- Business Support
-- Enterprise On-Ramp
+The current CLF-C02 Domain 4 material still contains some legacy/transitional plan terminology.
 
-However, the current CLF-C02 Domain 4 task page still names legacy plans as examples. The repository therefore teaches:
-- current live plan names
-- recognition of the legacy/transitional names that can still appear in exam-guide wording
-- support-level concepts rather than fragile price-table memorization
+The repository therefore teaches:
+- current plan names
+- recognition of legacy guide terminology
+- support-selection concepts rather than fragile price-table memorization
 
 ---
 
-# Practice coverage validation
+# Modern AWS AI / GenAI validation
+
+A separate research pass checked modern AI services so the repository is current without confusing the exam scope.
+
+## Important findings
+
+- **Amazon Q** and **Amazon SageMaker AI** remain explicitly listed in the current CLF-C02 Machine Learning service list.
+- **Amazon Bedrock is not currently on the explicit CLF-C02 in-scope service list.**
+- Bedrock, RAG, Knowledge Bases, Guardrails, and AgentCore are therefore treated as **supplemental modern AWS learning**, not CLF-C02 requirements.
+- AWS states that **Amazon Bedrock Agents** is now **Amazon Bedrock Agents Classic** and is no longer open to new customers from **July 30, 2026**.
+- AWS recommends **Amazon Bedrock AgentCore** for new agentic workloads.
+
+See `resources/MODERN-AWS-AI.md`.
+
+---
+
+# Practice validation
 
 ## `practice/QUESTIONS.md`
-50 scored-style original questions with exact domain weighting:
+50 scored-style original questions with exact official domain weighting:
 - 12 Domain 1 = 24%
 - 15 Domain 2 = 30%
 - 17 Domain 3 = 34%
@@ -379,20 +288,37 @@ However, the current CLF-C02 Domain 4 task page still names legacy plans as exam
 Plus six extra Domain 3 service drills.
 
 ## `practice/TARGETED-GAPS-QUESTIONS.md`
-30 additional original questions added after this audit to cover underrepresented explicit task-statement details, including:
-- IAM policy types
-- IAM credential report
-- root-only tasks
-- Parameter Store vs Secrets Manager
-- one-time vs repeatable operations
-- Systems Manager / Service Catalog / License Manager / X-Ray / AppStream / AppSync
-- RI flexibility and Organizations sharing
-- cost allocation tag types
-- data transfer
-- APN / Marketplace / Health / Trust & Safety
+30 original questions targeting explicit but easy-to-miss task-statement details.
 
-## Score warning
-Practice percentages in this repository are readiness heuristics only. They must **not** be interpreted as direct conversions to the AWS scaled 700/1000 passing score.
+Practice percentages are readiness heuristics only and must not be interpreted as direct conversions to AWS's 700/1000 scaled passing score.
+
+---
+
+# Privacy/public-repo audit
+
+The public refresh removes personalized examples and uses generic labels instead.
+
+Known personalized cost-tag examples were replaced with generic examples such as:
+- `Project=WebApp`
+- `Department=Engineering`
+- `Environment=Production`
+
+The current branch is also scanned for names, personal projects, employer/school/location references, email patterns, phone-like strings, IDs, and unfinished placeholders before merge.
+
+Historical Git commits can retain removed text. See `DISCLAIMER.md`.
+
+---
+
+# Public resource library
+
+The repository now includes:
+- `resources/OFFICIAL-AWS.md`
+- `resources/SKILL-BUILDER.md`
+- `resources/MODERN-AWS-AI.md`
+- `resources/COMMUNITY-RESOURCES.md`
+- `resources/VALIDATION-NOTES.md`
+
+This separates authoritative exam material from useful but non-exam modern AWS learning.
 
 ---
 
@@ -413,9 +339,9 @@ Practice percentages in this repository are readiness heuristics only. They must
 
 # Final scope rule
 
-For every topic in the repo, ask:
+For each topic, ask:
 
-> Can AWS plausibly test recognition, differentiation, responsibility, use case, cost/support choice, or business value from this concept?
+> Can AWS plausibly test recognition, differentiation, responsibility, use case, cost/support choice, or business value from this public CLF-C02 task statement?
 
 If yes, learn it at foundational level.
 
