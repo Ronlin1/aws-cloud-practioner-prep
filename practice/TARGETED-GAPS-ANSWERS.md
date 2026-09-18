@@ -102,34 +102,34 @@ Trust & Safety is the relevant AWS resource for reporting abuse or misuse of AWS
 
 ## Coverage-completion drill
 
-**31. A — Amazon SageMaker AI**  
+**31. B — Amazon SageMaker AI**  
 SageMaker AI is the current in-scope AWS service for building, training and deploying machine-learning models. Domain 3 explicitly uses SageMaker AI as an AI/ML example.
 
-**32. A — Amazon Q**  
+**32. C — Amazon Q**  
 Amazon Q is explicitly present in the current CLF-C02 Machine Learning service list. For this exam, recognition of the service family and its generative-AI assistant role is sufficient. Amazon Bedrock is useful modern AWS knowledge but is not currently on the explicit CLF-C02 in-scope service list.
 
-**33. A — Amazon QuickSight**  
+**33. D — Amazon QuickSight**  
 QuickSight is AWS's business-intelligence and visualization service. Kinesis is for streaming data; ECR is a container registry; CloudHSM provides dedicated hardware security modules.
 
-**34. A — Amazon EventBridge**  
+**34. B — Amazon EventBridge**  
 EventBridge is an event bus/router that matches events against rules and sends them to targets. SQS is a queue; SNS is publish/subscribe; Step Functions orchestrates workflows.
 
-**35. A — AWS Step Functions**  
+**35. C — AWS Step Functions**  
 Step Functions coordinates multi-step workflows/state machines, including sequences involving Lambda and other AWS services.
 
-**36. A — AWS Control Tower**  
+**36. B — AWS Control Tower**  
 Control Tower helps set up and govern a multi-account AWS landing zone with guardrails and AWS best-practice controls. Organizations provides the underlying multi-account structure/governance capabilities but is not the same turnkey landing-zone service.
 
-**37. A — Amazon API Gateway**  
+**37. D — Amazon API Gateway**  
 API Gateway is the managed API front door for creating, publishing, securing and managing APIs. It commonly integrates with Lambda in serverless applications.
 
-**38. A — Deploy redundant resources across multiple Availability Zones in the Region**  
+**38. B — Deploy redundant resources across multiple Availability Zones in the Region**  
 Multi-AZ design improves availability against an Availability Zone failure while keeping the workload in one Region.
 
-**39. A and B — Data residency/regulatory requirements; latency/proximity to users**  
+**39. A and C — Data residency/regulatory requirements; latency/proximity to users**  
 Common Region-selection considerations include legal/data-residency requirements, proximity/latency, service availability and pricing. The other options listed are account configuration choices, not Region-selection drivers.
 
-**40. A — AWS Support Center**  
+**40. C — AWS Support Center**  
 Support Center is the AWS resource used to create and manage support cases according to the customer's support entitlement. AWS re:Post is community knowledge/Q&A; AWS Health is for account/resource-relevant AWS events.
 
 ---
