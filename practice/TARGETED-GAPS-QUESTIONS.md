@@ -1,10 +1,12 @@
-# CLF-C02 Targeted Gap Drill — 30 Questions
+# CLF-C02 Targeted Gap Drill — 40 Questions
 
-These questions target explicit AWS CLF-C02 task-statement items that are easy to under-study in generic Cloud Practitioner courses.
+These questions target explicit AWS CLF-C02 task-statement items that are easy to under-study in generic Cloud Practitioner courses or underrepresented in a single domain-weighted mock.
 
 They are **original practice questions**, not exam dumps.
 
 Do not open `TARGETED-GAPS-ANSWERS.md` until you finish.
+
+**Validation refresh:** 2026-09-18.
 
 ## Security, IAM and compliance
 
@@ -253,6 +255,91 @@ A. AWS Trust & Safety
 B. AWS Pricing Calculator  
 C. Amazon QuickSight  
 D. AWS Config
+
+## Coverage-completion drill
+
+These ten questions close important blueprint gaps that were underrepresented in the original 50-question mock.
+
+### 31
+A data science team wants a managed AWS service to build, train, and deploy machine-learning models. Which service is MOST appropriate?
+
+A. Amazon SageMaker AI  
+B. Amazon Route 53  
+C. AWS Artifact  
+D. Amazon SQS
+
+### 32
+Which current in-scope AWS service is a generative-AI assistant family for supported AWS and business use cases?
+
+A. Amazon Q  
+B. Amazon Textract  
+C. Amazon Kinesis  
+D. AWS Shield
+
+### 33
+A business team wants interactive business-intelligence dashboards and visualizations from cloud data. Which service is MOST appropriate?
+
+A. Amazon QuickSight  
+B. Amazon Kinesis  
+C. Amazon ECR  
+D. AWS CloudHSM
+
+### 34
+A company wants to route application events from multiple sources to different targets according to event-matching rules. Which service should it use?
+
+A. Amazon EventBridge  
+B. Amazon SQS  
+C. Amazon EBS  
+D. AWS Artifact
+
+### 35
+A serverless application needs to coordinate a sequence of Lambda functions and service actions as a stateful workflow. Which service is MOST appropriate?
+
+A. AWS Step Functions  
+B. Amazon SNS  
+C. AWS Direct Connect  
+D. Amazon EFS
+
+### 36
+An enterprise wants to establish and govern a multi-account AWS landing zone using AWS best practices and guardrails. Which service is MOST appropriate?
+
+A. AWS Control Tower  
+B. AWS Cost Explorer  
+C. Amazon Macie  
+D. AWS Batch
+
+### 37
+A company needs a managed service to create, publish, secure, and manage APIs that can invoke backend services such as Lambda. Which service should it use?
+
+A. Amazon API Gateway  
+B. Amazon Route 53  
+C. AWS Storage Gateway  
+D. Amazon CloudFront
+
+### 38
+A workload must remain available if a single Availability Zone fails, but all resources must stay within one AWS Region. Which design is MOST appropriate?
+
+A. Deploy redundant resources across multiple Availability Zones in the Region  
+B. Place all resources in one Availability Zone  
+C. Use only one larger EC2 instance  
+D. Move the workload to an edge location
+
+### 39 — Select TWO
+Which TWO are common factors when selecting an AWS Region for a workload?
+
+A. Data-residency or regulatory requirements  
+B. Latency/proximity to users  
+C. Whether the account has an IAM password policy  
+D. Whether Cost Explorer is enabled  
+E. Whether the root user has an access key
+
+### 40
+A customer with the appropriate support entitlement needs to create and manage a technical support case with AWS. Which resource should the customer use?
+
+A. AWS Support Center  
+B. AWS Artifact  
+C. Amazon QuickSight  
+D. AWS Pricing Calculator
 
 ---
 
