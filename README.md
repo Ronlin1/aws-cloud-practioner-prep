@@ -4,7 +4,7 @@
 
 ### A focused, modern, exam-first study repository built for clarity, speed, and confidence.
 
-`CLF-C02` · `65 Questions` · `90 Minutes` · `4 Domains` · `Validated 2026-09-17`
+`CLF-C02` · `65 Questions` · `90 Minutes` · `4 Domains` · `Validated 2026-09-18`
 
 </div>
 
@@ -78,10 +78,11 @@ Current official format:
 
 ### 3. Practice
 
-- [`practice/QUESTIONS.md`](practice/QUESTIONS.md) — 50-question mock weighted to the official domains
-- [`practice/ANSWERS.md`](practice/ANSWERS.md) — explanations and mistake diagnosis
-- [`practice/TARGETED-GAPS-QUESTIONS.md`](practice/TARGETED-GAPS-QUESTIONS.md) — 30 questions on easy-to-miss blueprint details
-- [`practice/TARGETED-GAPS-ANSWERS.md`](practice/TARGETED-GAPS-ANSWERS.md) — explanations for the targeted drill
+- [`practice/QUESTIONS.md`](practice/QUESTIONS.md) — 50-question mock weighted exactly to the official domains
+- [`practice/ANSWERS.md`](practice/ANSWERS.md) — validated explanations and mistake diagnosis
+- [`practice/TARGETED-GAPS-QUESTIONS.md`](practice/TARGETED-GAPS-QUESTIONS.md) — 40 questions on easy-to-miss and underrepresented blueprint details
+- [`practice/TARGETED-GAPS-ANSWERS.md`](practice/TARGETED-GAPS-ANSWERS.md) — validated explanations for the targeted drill
+- [`practice/VALIDATION-AUDIT.md`](practice/VALIDATION-AUDIT.md) — deep audit of weighting, answer keys, ambiguity, coverage and current AWS terminology
 
 ### 4. Validate
 
@@ -211,5 +212,5 @@ You need to understand the cloud fundamentals, recognize the major services, dis
 
 ---
 
-**Last deep validation:** 2026-09-17  
+**Last deep validation:** 2026-09-18  
 **Maintained independently. Not affiliated with Amazon Web Services.**
