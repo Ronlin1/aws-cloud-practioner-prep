@@ -7,9 +7,13 @@ These are **original practice questions**, not real/dumped AWS exam questions. T
 - Domain 3: 17 questions = 34%
 - Domain 4: 6 questions = 12%
 
-Suggested time: **70 minutes** for 50 questions.
+Suggested time: **70 minutes** for 50 questions. This is approximately proportional to the official 90 minutes for 65 total exam questions.
+
+> **Important:** The domain percentages are exact, but AWS does not publish the exact question mix within each task statement or the ratio of multiple-choice to multiple-response questions. This mock is a study instrument, not a reconstruction of the live exam.
 
 Do not open `ANSWERS.md` until you finish.
+
+**Practice-bank validation refresh:** 2026-09-18. See [`VALIDATION-AUDIT.md`](VALIDATION-AUDIT.md).
 
 ---
 
@@ -372,7 +376,7 @@ D. Amazon API Gateway
 ## 44
 A company wants to cache and deliver web content globally with low latency. Which service should it use?
 
-A. AWS Global Accelerator only  
+A. AWS Global Accelerator  
 B. Amazon CloudFront  
 C. AWS VPN  
 D. Amazon VPC
@@ -414,11 +418,11 @@ C. Dedicated Hosts
 D. Capacity Reservations
 
 ## 49
-A company must ensure that EC2 capacity is available for a workload in a specific Availability Zone. Which option addresses this requirement directly?
+A company must ensure EC2 capacity is available in a specific Availability Zone **without requiring a long-term pricing commitment**. Which option addresses this requirement directly?
 
 A. Savings Plans  
 B. Spot Instances  
-C. Capacity Reservation  
+C. On-Demand Capacity Reservation  
 D. S3 Intelligent-Tiering
 
 ## 50

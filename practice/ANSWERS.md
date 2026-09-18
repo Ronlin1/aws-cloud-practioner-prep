@@ -2,9 +2,13 @@
 
 Score the first 50 questions only. Bonus questions are extra drills.
 
+**Answer-key validation refresh:** 2026-09-18. The full key was rechecked against the current CLF-C02 blueprint and current AWS documentation. No answer-key reversals were required; wording was tightened where a live AWS distinction could otherwise become ambiguous.
+
+> The 50-question mock matches the official **domain weights**, but it does not attempt to reproduce AWS's unpublished task-statement distribution or exact multiple-response ratio. Use the targeted gap drill after this mock to broaden coverage.
+
 ## Study score guide
 
-These are **study targets only**, not AWS score conversions:
+These are **study targets only**, not AWS score conversions or guarantees:
 
 - **45–50 (90–100%)**: strong practice performance; focus on final review and weak details.
 - **42–44 (84–88%)**: good practice range; patch the remaining weak categories.
@@ -156,7 +160,7 @@ Kinesis is associated with real-time streaming data such as clickstreams, logs a
 Route 53 is AWS's DNS service.
 
 **44. B — Amazon CloudFront**  
-CloudFront is AWS's CDN and uses edge locations to deliver/cache content closer to users.
+CloudFront is AWS's CDN and uses edge locations to deliver/cache content closer to users. Global Accelerator improves network paths to application endpoints but is not a CDN/content cache.
 
 ---
 
@@ -174,8 +178,8 @@ Budgets tracks cost/usage against thresholds and can send alerts.
 **48. B — Spot Instances**  
 Spot uses spare EC2 capacity at deep discounts, but instances can be interrupted, making it ideal for fault-tolerant batch workloads.
 
-**49. C — Capacity Reservation**  
-A Capacity Reservation ensures EC2 capacity is available for the specified reservation attributes. It is primarily a capacity-availability mechanism, not inherently a discount model.
+**49. C — On-Demand Capacity Reservation**  
+An On-Demand Capacity Reservation reserves EC2 capacity for specified attributes, commonly in a specific Availability Zone, without requiring a term commitment. It is primarily a capacity-availability mechanism and does not by itself provide a pricing discount. A Zonal Reserved Instance can also reserve capacity, which is why the question explicitly rules out a long-term pricing commitment.
 
 **50. A — Dedicated Host**  
 Dedicated Hosts provide a physical server dedicated to the customer with host visibility/control useful for certain socket/core/server-bound licensing requirements.
@@ -221,3 +225,12 @@ When you miss a question, tag it with one of these labels:
 - `READING` — knew it but misread keywords
 
 Then study only the corresponding section in the repo. After this mock, also do `TARGETED-GAPS-QUESTIONS.md`, because it covers explicit task-statement details that cannot all fit into one 50-question weighted mock.
+
+## Official validation references
+
+- CLF-C02 exam guide: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html
+- Domain 1: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain1.html
+- Domain 2: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain2.html
+- Domain 3: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html
+- Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
+- In-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html
