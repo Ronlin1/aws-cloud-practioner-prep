@@ -31,6 +31,7 @@ This is an independently maintained community study resource. It is **not affili
 | **Exam in 48 hours** | Start with [`01-48-HOUR-PLAN.md`](01-48-HOUR-PLAN.md), then focus heavily on Domains 2 and 3 |
 | **A few days to a few weeks** | Follow the domain files in order, then drill comparisons and practice questions |
 | **Already studied AWS** | Use [`06-SERVICE-CHEAT-SHEET.md`](06-SERVICE-CHEAT-SHEET.md), [`07-CONFUSING-SERVICES-EXAM-TRAPS.md`](07-CONFUSING-SERVICES-EXAM-TRAPS.md), and the practice sets |
+| **Taking the exam online** | Read [`MY_EXPERIENCE.md`](MY_EXPERIENCE.md) for a privacy-safe personal exam-day checklist and proctoring lessons |
 | **Want official links only** | Go straight to [`resources/`](resources/README.md) |
 | **Want modern AWS AI/GenAI too** | Read [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) after the exam-focused material |
 
@@ -84,13 +85,20 @@ Current official format:
 - [`practice/TARGETED-GAPS-ANSWERS.md`](practice/TARGETED-GAPS-ANSWERS.md) — validated explanations for the targeted drill
 - [`practice/VALIDATION-AUDIT.md`](practice/VALIDATION-AUDIT.md) — deep audit of weighting, answer keys, ambiguity, coverage and current AWS terminology
 
-### 4. Validate
+### 4. Exam day
+
+- [`MY_EXPERIENCE.md`](MY_EXPERIENCE.md) — personal online-proctored exam experience, room/setup checklist, technical interruption lessons, and review strategy
+- [`blog/HASHNODE-CLF-C02-EXAM-EXPERIENCE.md`](blog/HASHNODE-CLF-C02-EXAM-EXPERIENCE.md) — standalone Hashnode-ready article based on the same experience
+
+> Exam-day experience pages are personal guidance, not official policy. Always verify the current AWS/Pearson VUE instructions for your own appointment.
+
+### 5. Validate
 
 - [`10-OUT-OF-SCOPE-SKIP.md`](10-OUT-OF-SCOPE-SKIP.md) — material not worth deep study for CLF-C02
 - [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md) — what was checked against current AWS sources
 - [`resources/VALIDATION-NOTES.md`](resources/VALIDATION-NOTES.md) — latest validation notes and methodology
 
-### 5. Go deeper
+### 6. Go deeper
 
 - [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) — official AWS source links
 - [`resources/SKILL-BUILDER.md`](resources/SKILL-BUILDER.md) — current AWS learning and exam-prep entry points
@@ -162,9 +170,10 @@ Modern topics such as **Amazon Bedrock, foundation models, RAG, Bedrock Knowledg
 This repository is intended to be safe to share publicly.
 
 - Examples are generic rather than tied to a person, employer, school, or private project.
-- No exam dumps or leaked questions are accepted.
+- Do not publish candidate IDs, registration/order numbers, exam-launch tokens, ID/passport images or numbers, addresses, phone numbers, personal email addresses, private screenshots, credentials, API keys, or private URLs.
+- No exam dumps, leaked questions, reconstructed live exams, or screenshots of live exam content are accepted.
 - Corrections should cite official AWS documentation wherever possible.
-- Historical Git commits can preserve old text even after the latest branch is cleaned; see [`DISCLAIMER.md`](DISCLAIMER.md) for that limitation.
+- Historical Git commits can preserve old text and public commit-author metadata even after the latest branch is cleaned; see [`DISCLAIMER.md`](DISCLAIMER.md) for that limitation.
 
 ---
 
@@ -192,7 +201,7 @@ Found a stale AWS service name, broken official link, changed exam scope, or con
 
 Contributions are welcome. Please use [`CONTRIBUTING.md`](CONTRIBUTING.md) and include an official AWS source for scope-sensitive corrections whenever possible.
 
-Do **not** submit exam dumps, memorized live-exam questions, or content presented as leaked/real exam material.
+Do **not** submit exam dumps, memorized live-exam questions, appointment screenshots, private identifiers, secrets, or content presented as leaked/real exam material.
 
 ---
 
@@ -213,4 +222,5 @@ You need to understand the cloud fundamentals, recognize the major services, dis
 ---
 
 **Last deep validation:** 2026-09-18  
+**Public-sharing/privacy review:** 2026-09-26  
 **Maintained independently. Not affiliated with Amazon Web Services.**
