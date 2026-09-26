@@ -110,7 +110,7 @@ AWS describes it as a foundational certification focused on:
 - generative AI
 - AWS AI services and use cases
 
-That exam goes far deeper into AI than Cloud Practitioner. AWS itself notes that Cloud Practitioner contains only one task statement specifically related to AI/ML, while AI Practitioner is centered on AI/ML and generative AI.
+That exam goes far deeper into AI than Cloud Practitioner.
 
 ---
 
@@ -138,4 +138,4 @@ That exam goes far deeper into AI than Cloud Practitioner. AWS itself notes that
 
 Do not spend CLF-C02 cram time learning their implementation details unless the official exam scope changes.
 
-**Last validated:** 2026-09-17
+**Last validated:** 2026-09-26
