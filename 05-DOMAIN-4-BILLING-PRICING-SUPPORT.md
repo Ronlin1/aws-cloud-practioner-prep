@@ -83,12 +83,16 @@ Common exam reasons:
 Instances run on hardware dedicated to one customer, but without the same host-level visibility/control as Dedicated Hosts.
 
 ## On-Demand Capacity Reservations
-Reserve EC2 capacity for specified attributes, commonly in a specific Availability Zone.
+Reserve EC2 capacity for matching instance attributes in a specific Availability Zone.
 
-Key exam point:
+Key exam points:
 - reserves/guarantees capacity availability
 - does **not by itself provide a pricing discount**
-- can still be covered by eligible Savings Plans or Regional RI billing discounts
+- an **immediate-use** Capacity Reservation has no term commitment and can be modified or canceled as needed
+- a **future-dated** Capacity Reservation includes a commitment duration after it is delivered
+- matching usage can still receive eligible Savings Plans or Regional RI billing discounts
+
+For foundational questions that say “guarantee capacity now without a long-term pricing commitment,” think **immediate-use On-Demand Capacity Reservation**.
 
 ### Purchasing-option instant map
 - flexible/no commitment -> On-Demand
@@ -96,7 +100,7 @@ Key exam point:
 - interruptible lowest-cost capacity -> Spot
 - dedicated physical server/licensing -> Dedicated Host
 - dedicated hardware without host-level control -> Dedicated Instance
-- guarantee capacity -> Capacity Reservation
+- guarantee EC2 capacity -> Capacity Reservation
 
 ---
 
@@ -361,8 +365,8 @@ https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 ### “Need to exchange the RI for different configuration later.”
 **Convertible RI**
 
-### “Company must guarantee EC2 capacity.”
-**Capacity Reservation**
+### “Company must guarantee EC2 capacity now without a long-term pricing commitment.”
+**Immediate-use On-Demand Capacity Reservation**
 
 ### “Company uses server-bound licensing and needs physical host visibility/control.”
 **Dedicated Host**
@@ -415,6 +419,7 @@ https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
 # Official references
 
 - Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
+- Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
 - RI scope/flexibility: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
 - RI sharing: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html
 - Cost allocation tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html

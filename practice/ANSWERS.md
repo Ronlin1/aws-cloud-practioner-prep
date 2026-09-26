@@ -2,7 +2,7 @@
 
 Score the first 50 questions only. Bonus questions are extra drills.
 
-**Answer-key validation refresh:** 2026-09-18. The full key was rechecked against the current CLF-C02 blueprint and current AWS documentation. No answer-key reversals were required; wording was tightened where a live AWS distinction could otherwise become ambiguous.
+**Answer-key validation refresh:** 2026-09-26. The full key was rechecked against the current CLF-C02 blueprint and current AWS documentation. No answer-key reversals were required; wording was tightened where a live AWS distinction could otherwise become ambiguous.
 
 > The 50-question mock matches the official **domain weights**, but it does not attempt to reproduce AWS's unpublished task-statement distribution or exact multiple-response ratio. Use the targeted gap drill after this mock to broaden coverage.
 
@@ -179,7 +179,7 @@ Budgets tracks cost/usage against thresholds and can send alerts.
 Spot uses spare EC2 capacity at deep discounts, but instances can be interrupted, making it ideal for fault-tolerant batch workloads.
 
 **49. C — On-Demand Capacity Reservation**  
-An On-Demand Capacity Reservation reserves EC2 capacity for specified attributes, commonly in a specific Availability Zone, without requiring a term commitment. It is primarily a capacity-availability mechanism and does not by itself provide a pricing discount. A Zonal Reserved Instance can also reserve capacity, which is why the question explicitly rules out a long-term pricing commitment.
+An **immediate-use** On-Demand Capacity Reservation reserves EC2 capacity for matching attributes in a specific Availability Zone without requiring a term commitment, and it does not by itself provide a pricing discount. AWS also supports **future-dated Capacity Reservations**, which include a commitment duration. A Zonal Reserved Instance can also reserve capacity, which is why this question explicitly asks for capacity without a long-term pricing commitment.
 
 **50. A — Dedicated Host**  
 Dedicated Hosts provide a physical server dedicated to the customer with host visibility/control useful for certain socket/core/server-bound licensing requirements.
@@ -234,3 +234,4 @@ Then study only the corresponding section in the repo. After this mock, also do 
 - Domain 3: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html
 - Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
 - In-scope services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/clf-02-in-scope-services.html
+- Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html

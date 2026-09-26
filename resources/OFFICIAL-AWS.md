@@ -17,6 +17,12 @@ Use this page when you want the **authoritative current source**, not a summary.
 - Domain 3 — Cloud Technology and Services: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html
 - Domain 4 — Billing, Pricing, and Support: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
 
+## Official exam preparation
+
+- AWS Certification Prep: https://aws.amazon.com/certification/certification-prep/
+- CLF-C02 Skill Builder exam-prep hub: https://skillbuilder.aws/category/exam-prep/cloud-practitioner-foundational-CLF-C02
+- AWS Cloud Practitioner Essentials: https://skillbuilder.aws/learn/94T2BEN85A/aws-cloud-practitioner-essentials/8D79F3AVR7
+
 ## Frameworks and cloud foundations
 
 - AWS Well-Architected Framework: https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
@@ -40,15 +46,27 @@ Use this page when you want the **authoritative current source**, not a summary.
 - AWS Cost Explorer: https://aws.amazon.com/aws-cost-management/aws-cost-explorer/
 - AWS Budgets: https://aws.amazon.com/aws-cost-management/aws-budgets/
 - Cost allocation tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html
+- EC2 purchasing options decision guide: https://docs.aws.amazon.com/decision-guides/latest/decision-guides/ec2-purchasing-options-aws-how-to-choose.html
+- EC2 Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
 - EC2 Reserved Instance scope/flexibility: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/reserved-instances-scope.html
 
 ## Support and account health
 
 - AWS Support plans: https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
+- AWS Support-plan transition: https://docs.aws.amazon.com/awssupport/latest/user/support-plans-eos.html
 - AWS Support pricing: https://aws.amazon.com/premiumsupport/pricing/
 - AWS Health: https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html
 - AWS Trusted Advisor: https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html
 - AWS re:Post: https://repost.aws/
+
+## Online-proctored exam day
+
+For online testing policy, use Pearson VUE's AWS-specific OnVUE page as the authority rather than community experience reports.
+
+- AWS OnVUE requirements and system test: https://www.pearsonvue.com/us/en/aws/onvue.html
+- General OnVUE requirements: https://www.pearsonvue.com/us/en/onvue/requirements.html
+
+Current Pearson guidance includes one-display-only testing, minimum internet requirements, ID rules, room rules, and prohibited network/device conditions. These can change, so recheck before your own appointment.
 
 ## Service documentation starting points
 
@@ -65,6 +83,6 @@ Use this page when you want the **authoritative current source**, not a summary.
 
 ## Reliability rule
 
-If a blog, video, GitHub repository, course, or old screenshot conflicts with the current official exam guide, follow the current AWS documentation.
+If a blog, video, GitHub repository, course, old screenshot, or personal exam experience conflicts with the current official exam guide or Pearson VUE policy, follow the current official source.
 
-**Last validated:** 2026-09-17
+**Last validated:** 2026-09-26

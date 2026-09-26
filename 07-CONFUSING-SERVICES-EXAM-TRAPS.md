@@ -352,9 +352,13 @@ Important correction to a common oversimplification:
 # Reserved Instance vs On-Demand Capacity Reservation
 
 - **Reserved Instance** -> commitment-based billing discount; Zonal RI also reserves capacity
-- **On-Demand Capacity Reservation** -> reserve EC2 capacity without inherently creating a pricing discount commitment
+- **Immediate-use On-Demand Capacity Reservation** -> reserve EC2 capacity in an AZ with no term commitment and no inherent pricing discount
+- **Future-dated Capacity Reservation** -> reserve capacity for a future start date with a commitment duration; still no inherent billing discount
 
-Eligible Savings Plans or Regional RI discounts can still apply to matching usage in a Capacity Reservation.
+Eligible Savings Plans or Regional RI discounts can still apply to matching Capacity Reservation usage.
+
+Exam reflex:
+> Need capacity **now** in a specific AZ without a long-term pricing commitment -> **immediate-use On-Demand Capacity Reservation**.
 
 ---
 
