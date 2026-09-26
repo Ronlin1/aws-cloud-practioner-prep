@@ -1,7 +1,7 @@
 # 11 — Deep Validation Audit — CLF-C02
 
-**Validation date:** 2026-09-17  
-**Objective:** verify this repository against the current AWS Certified Cloud Practitioner CLF-C02 exam guide, task statements, technologies/concepts list, in-scope/out-of-scope service lists, current Skill Builder preparation guidance, AWS Support documentation, and the current AWS AI/GenAI ecosystem.
+**Validation date:** 2026-09-26  
+**Objective:** verify this repository against the current AWS Certified Cloud Practitioner CLF-C02 exam guide, task statements, technologies/concepts list, in-scope/out-of-scope service lists, current Skill Builder preparation guidance, AWS Support documentation, current EC2 purchasing-option behavior, Pearson VUE online-testing requirements, and the current AWS AI/GenAI ecosystem.
 
 ---
 
@@ -202,13 +202,20 @@ Covered:
 - partner-benefit examples
 - current-vs-legacy Support terminology
 
-**Status:** covered at CLF-C02 depth.
+### Capacity Reservation 2026 nuance
+Current EC2 documentation distinguishes:
+- **immediate-use Capacity Reservations** — no term commitment; can be modified or canceled as needed
+- **future-dated Capacity Reservations** — include a commitment duration after delivery
+
+Neither provides an inherent billing discount, although eligible Savings Plans or Regional RI discounts can apply to matching usage.
+
+**Status:** covered at CLF-C02 depth with current purchasing-option nuance.
 
 ---
 
 # In-scope / out-of-scope audit
 
-The current official service lists were rechecked during the public refresh.
+The current official service lists were rechecked during the 2026-09-26 validation.
 
 Important rule from AWS:
 
@@ -227,15 +234,17 @@ See:
 
 # Skill Builder validation
 
-Current AWS Cloud Practitioner preparation guidance still recommends:
-1. review the exam guide
-2. use the Official Practice Question Set
-3. use the Official Pretest to identify gaps
-4. refresh weak topics
-5. review/practice exam-style questions
-6. use the Official Practice Exam where available
+Current AWS Certification Prep guidance distinguishes free and subscription resources.
 
-The repository links to durable exam-prep hubs rather than depending on stale direct course IDs.
+Free resources include:
+- **AWS Certification Official Practice Question Sets** — 20 questions with feedback
+- free **Exam Prep digital courses** — about 2 hours
+
+Subscription resources include:
+- **AWS Certification Official Practice Exams**
+- enhanced exam-prep materials with additional questions/labs
+
+The repository links to durable certification and exam-prep hubs rather than depending on stale direct course IDs.
 
 See `resources/SKILL-BUILDER.md`.
 
@@ -250,6 +259,8 @@ Current AWS Support documentation lists:
 - Business Support+
 - Enterprise Support
 - Unified Operations
+
+AWS states Developer Support, legacy Business Support and Enterprise On-Ramp will be discontinued January 1, 2027.
 
 The current CLF-C02 Domain 4 material still contains some legacy/transitional plan terminology.
 
@@ -288,37 +299,60 @@ See `resources/MODERN-AWS-AI.md`.
 Plus six extra Domain 3 service drills.
 
 ## `practice/TARGETED-GAPS-QUESTIONS.md`
-30 original questions targeting explicit but easy-to-miss task-statement details.
+**40 original questions** targeting explicit but easy-to-miss task-statement details and underrepresented blueprint areas.
 
 Practice percentages are readiness heuristics only and must not be interpreted as direct conversions to AWS's 700/1000 scaled passing score.
 
 ---
 
+# Online-proctored exam guidance validation
+
+Current Pearson VUE AWS OnVUE requirements were rechecked on 2026-09-26.
+
+Current requirements include:
+- begin check-in 30 minutes before the appointment
+- one display only
+- working webcam, microphone and speaker; no headphones/headsets
+- stable internet of at least 6 Mbps download and 2 Mbps upload
+- run the system test on the same device and network planned for exam day
+- no VPNs, corporate networks, or public/shared networks
+- remain alone in the testing room
+- accepted government-issued photo ID must match the booking name
+- phone access only when explicitly permitted by the proctor
+
+Pearson's current rules also state that proctors cannot formally pause or extend the exam timer. Personal-experience wording in this repository therefore describes technical events as a temporary **testing-session interruption** rather than claiming a formal timer pause unless directly observed.
+
+---
+
 # Privacy/public-repo audit
 
-The public refresh removes personalized examples and uses generic labels instead.
+The current public branch uses generic examples rather than personal identifiers.
 
-Known personalized cost-tag examples were replaced with generic examples such as:
-- `Project=WebApp`
-- `Department=Engineering`
-- `Environment=Production`
+Current-branch scans check for:
+- personal names and known personal projects
+- employer/school/location references
+- personal email/phone patterns
+- candidate/registration/order IDs
+- appointment or launch-token material
+- AWS access-key/private-key patterns and other obvious credential markers
+- unfinished placeholders
 
-The current branch is also scanned for names, personal projects, employer/school/location references, email patterns, phone-like strings, IDs, and unfinished placeholders before merge.
+No current-branch secret or sensitive exam PII was identified in the 2026-09-26 validation.
 
-Historical Git commits can retain removed text. See `DISCLAIMER.md`.
+Historical Git commits can retain removed text and public commit-author metadata. See `DISCLAIMER.md`.
 
 ---
 
 # Public resource library
 
-The repository now includes:
+The repository includes:
 - `resources/OFFICIAL-AWS.md`
 - `resources/SKILL-BUILDER.md`
 - `resources/MODERN-AWS-AI.md`
 - `resources/COMMUNITY-RESOURCES.md`
 - `resources/VALIDATION-NOTES.md`
 
-This separates authoritative exam material from useful but non-exam modern AWS learning.
+Community resources are supplemental only and are labeled for freshness when older material can conflict with current AWS scope.
 
 ---
 
@@ -333,7 +367,9 @@ This separates authoritative exam material from useful but non-exam modern AWS l
 - Domain 3: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain3.html
 - Domain 4: https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html
 - AWS certification prep: https://aws.amazon.com/certification/certification-prep/
+- Capacity Reservations: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
 - Current Support plans: https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html
+- Pearson VUE AWS OnVUE: https://www.pearsonvue.com/us/en/aws/onvue.html
 
 ---
 
