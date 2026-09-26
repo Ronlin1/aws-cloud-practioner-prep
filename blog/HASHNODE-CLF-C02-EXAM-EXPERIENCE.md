@@ -8,9 +8,11 @@ I recently sat for the **AWS Certified Cloud Practitioner (CLF-C02)** exam and p
 
 The technical preparation mattered, but so did something I had initially underestimated: **the exam-day setup itself**.
 
-An online-proctored certification exam is not just about knowing EC2, S3, IAM, VPCs, pricing models, and the shared responsibility model. You also need a compliant room, a working camera, stable internet, valid identification, and enough discipline to stay calm when the proctoring system interrupts you.
+An online-proctored certification exam is not just about knowing EC2, S3, IAM, VPCs, pricing models, and the shared responsibility model. You also need a compliant room, a working camera, stable internet, valid identification, and enough discipline to stay calm when something technical goes wrong.
 
 This article shares the practical lessons I would give another candidate. I am deliberately not sharing live exam questions or reconstructed exam content.
+
+> **Policy note:** Online-proctoring rules can change. The details below were rechecked against Pearson VUE's AWS OnVUE requirements on **September 26, 2026**. Always verify your own current appointment instructions.
 
 ## What I focused on before the exam
 
@@ -31,11 +33,11 @@ For example:
 - **CloudWatch**: metrics, logs, alarms, observability.
 - **AWS Config**: resource configuration history and compliance.
 - **CloudFront**: CDN and content caching at the edge.
-- **Global Accelerator**: improved global network routing and endpoint failover, not content caching.
+- **Global Accelerator**: improved global network routing and endpoint availability, not content caching.
 - **EFS**: shared Linux file system.
 - **FSx for Windows File Server**: Windows, SMB, Active Directory.
-- **Site-to-Site VPN**: on-premises network to AWS over the internet.
-- **Direct Connect**: dedicated private network connection.
+- **Site-to-Site VPN**: on-premises network to AWS over an encrypted internet connection.
+- **Direct Connect**: dedicated network connection.
 
 Those distinctions mattered because many questions present several answers that are technically related, but only one satisfies the complete requirement.
 
@@ -64,15 +66,15 @@ It contains concise domain notes, service comparisons, practice questions, targe
 
 I began the check-in process about **25 minutes before my scheduled exam time**.
 
-That turned out to be useful because the verification process involved several steps before I could start the actual exam.
+Pearson's current AWS OnVUE guidance says candidates should **begin check-in 30 minutes before the appointment**, so I would now recommend being completely ready before that window opens.
 
-My advice is to be completely ready before the check-in window opens. Do not use the appointment time as the time you begin preparing your room or looking for your ID.
+Do not use the appointment time as the time you begin preparing your room or looking for your ID.
 
 ## Have a proper government ID ready
 
 I prepared a **passport** for identification.
 
-Whatever ID you use, make sure it meets the exact requirements in your current appointment instructions and that the name matches your booking.
+Pearson currently accepts an international passport among its approved government-issued IDs. Whatever ID you use, make sure the name exactly matches the exam booking.
 
 Do not wait until the check-in screen to discover a mismatch.
 
@@ -95,35 +97,69 @@ Good lighting is also worth thinking about. The proctor needs to see you clearly
 
 A practical room checklist is:
 
-- private room
+- private, quiet room
 - clear desk
-- no books or notes nearby
+- no books, notes, paper, or pens nearby
 - no watch or smartwatch
+- no headphones or earbuds
 - no unnecessary electronics
 - no second person in the room
+- **one display only**
 - good lighting
 - laptop connected to power
 - strong, stable internet
 
-Always check the current official rules because online-proctoring requirements can change.
+Pearson currently prohibits public spaces such as libraries and coffee shops for OnVUE testing.
 
 ## The proctor asked me to show the room
 
 At the beginning, the proctor contacted me by video and asked me to walk them around the room using my **laptop camera**.
 
-That is a good reason to prepare the entire room, not only the small area visible behind your laptop.
+Pearson's current check-in process includes a **360-degree room scan**, so prepare the entire room, not only the small area directly behind your laptop.
 
 If your laptop is plugged in, arrange the cable so you can move the computer briefly without disconnecting anything.
 
-## Put the phone away after verification
+## Run the system test on the exact setup you will use
 
-A phone may be used during the permitted verification process depending on the current check-in flow.
+Pearson currently says to run and pass the OnVUE system test on the **same device and network** you plan to use for the real exam.
 
-Once that stage is complete, put it away as instructed.
+I would test:
 
-Do not leave it sitting beside the keyboard where reaching for it could look suspicious or violate the exam rules.
+- computer
+- webcam
+- microphone
+- speakers
+- internet connection
+- intended room/location
 
-## My exam was paused because the proctor lost my camera feed
+Then, before check-in:
+
+- restart the laptop
+- close unnecessary background apps
+- disable VPN software
+- disconnect additional displays
+- plug the laptop into power
+
+## Your internet connection needs to be more than “working”
+
+The proctor needs continuous video and audio, not just enough bandwidth to load exam questions.
+
+Pearson currently states minimum connectivity of:
+
+- **6 Mbps download**
+- **2 Mbps upload**
+
+It also currently prohibits:
+
+- VPNs
+- corporate networks
+- public/shared networks
+
+and recommends ensuring nobody else is consuming the connection with large downloads or streaming during the exam.
+
+Use the strongest, most stable **compliant** connection available to you and test it in advance.
+
+## My webcam feed disappeared for the proctor
 
 This was the most unexpected part of my session.
 
@@ -131,23 +167,33 @@ Partway through the exam, the proctor sent me a message saying they could no lon
 
 From my side, it was not immediately obvious that anything had failed.
 
-The exam was paused while the issue was checked. After roughly **three to four minutes**, I was able to resume.
+My **testing session was temporarily interrupted while the issue was checked**. After roughly **three to four minutes**, I was able to resume.
 
-That experience reinforced two things for me:
+One important nuance: Pearson's current public guidance says an in-exam proctor **cannot formally pause or extend the exam timer**. So I describe what happened as a temporary session interruption rather than assuming the timer itself was officially paused.
+
+That experience reinforced two things for me.
 
 ### 1. Stable internet matters
 
-The proctor needs continuous video and audio, not just enough bandwidth to load exam questions.
-
-Use the strongest and most stable connection available to you and test the exact setup before exam time.
+Use the strongest and most stable compliant connection available to you and test the exact setup before exam time.
 
 ### 2. Do not panic during a technical interruption
 
-If the proctor pauses the exam, follow the instructions they give you.
+If something goes wrong, follow the proctor and on-screen instructions.
 
 Do not start randomly opening applications, changing network settings, or leaving the workstation unless instructed to do so.
 
-The pause in my case was temporary and I resumed after the check.
+Pearson says to use the in-exam chat to reach a proctor. If the computer freezes or disconnects, follow the current relaunch instructions for OnVUE.
+
+## Put the phone away after verification
+
+A phone may be used during the permitted verification process depending on the current check-in flow.
+
+Once that stage is complete, put it away as instructed.
+
+Pearson's current rule is that you should **not access your phone during the exam unless explicitly permitted by a proctor**.
+
+Do not leave it beside the keyboard where reaching for it could look suspicious or violate the rules.
 
 ## Some questions are trickier than they first appear
 
@@ -198,19 +244,22 @@ Finishing early is useful only if you use the remaining time well.
 If I were sitting another online-proctored AWS exam tomorrow, I would repeat these habits:
 
 1. Run the official system test on the exact computer and network I will use.
-2. Restart the laptop before check-in.
-3. Close VPNs, messaging apps, screen recorders, and unnecessary background programs.
-4. Plug the laptop into power.
-5. Test the webcam, microphone, and speakers.
-6. Prepare the entire room, not just the desk.
-7. Keep valid ID ready before the check-in window opens.
-8. Remove watches and unnecessary electronics.
-9. Make sure nobody can enter the room.
-10. Use good lighting and the most stable internet connection available.
-11. Put the phone away after the permitted verification stage.
-12. Stay calm if the proctor needs to pause or re-check something.
-13. Flag uncertain exam questions and return to them.
-14. Use extra time for a deliberate review before submitting.
+2. Confirm at least 6 Mbps download and 2 Mbps upload on a stable connection.
+3. Avoid VPNs, corporate networks, and public/shared networks.
+4. Restart the laptop before check-in.
+5. Close messaging apps, screen recorders, VPNs, and unnecessary background programs.
+6. Plug the laptop into power.
+7. Test the webcam, microphone, and speakers.
+8. Use one display only.
+9. Prepare the entire room, not just the desk.
+10. Keep valid ID ready before the check-in window opens.
+11. Remove watches and unnecessary electronics.
+12. Make sure nobody can enter the room.
+13. Use good lighting.
+14. Put the phone away after the permitted verification stage.
+15. Stay calm if the proctor needs to re-check something.
+16. Flag uncertain exam questions and return to them.
+17. Use extra time for a deliberate review before submitting.
 
 ## What I would not do
 
@@ -223,8 +272,6 @@ I would also not spend the final hours learning deep implementation topics that 
 ## A final word to anyone preparing
 
 There will probably be a few questions where you pause and think, “Both of these look right.”
-
-That is normal.
 
 Read the requirement again. Look for the word that changes the scenario. Eliminate anything that fails even one condition.
 
