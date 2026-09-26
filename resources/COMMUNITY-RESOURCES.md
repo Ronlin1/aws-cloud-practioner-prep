@@ -4,32 +4,53 @@ Community material can be useful for explanations, extra practice, and alternati
 
 Always cross-check scope-sensitive facts against [`OFFICIAL-AWS.md`](OFFICIAL-AWS.md).
 
+**Last reviewed:** 2026-09-26
+
+## Freshness labels
+
+- **Current supplement** — recently checked and broadly compatible with the current CLF-C02 blueprint
+- **Partial** — useful, but incomplete as a study source
+- **Archival / stale-risk** — contains older links, promotions, scope wording, or service lists that can conflict with current AWS material
+
+A resource can still be useful even when it is old. The label tells you **how much you should trust it for current exam scope**.
+
 ## Public GitHub repositories reviewed
 
-### Tutorials Dojo / Jon Bonso CLF-C02 resources
+### Tutorials Dojo / Jon Bonso CLF-C02 resources — **Archival / stale-risk**
 https://github.com/jsbonso/aws-certified-cloud-practitioner-clf-c02
 
 Useful for:
-- resource discovery
-- study organization
+- alternate explanations
+- historical CLF-C02 topic organization
 - supplemental review
 
-Caution:
-- some repositories accumulate older links or wording over time
-- verify current scope against AWS before memorizing details
+Important caution:
+- its current README still contains older CLF-C02 task-statement/service wording and older direct training links
+- some services shown there now appear on AWS's current explicit out-of-scope list
+- do **not** use that repository to decide what is currently in or out of scope
 
-### Sudhirtmg CLF-C02 study notes
+Use the current AWS exam guide and scope pages instead.
+
+### Sudhirtmg CLF-C02 study notes — **Partial**
 https://github.com/Sudhirtmg/aws-clf-c02-study-notes
 
 Useful for:
 - beginner-oriented notes
 - alternate explanations
-- practice structure
+- study-note inspiration
 
-### AWSCCPResources aggregation
+Important caution:
+- the public progress tracker is incomplete, so treat it as a supplement rather than a complete CLF-C02 curriculum
+
+### AWSCCPResources aggregation — **Archival / stale-risk**
 https://github.com/AnuragAnalog/AWSCCPResources
 
-Useful for discovering additional study links. Treat it as an index, not an exam authority.
+Useful for:
+- discovering older learning resources and historical study links
+
+Important caution:
+- it contains older Skill Builder URLs and time-limited promotions that have expired
+- do not use its exam-policy, pricing, promotion, or resource-access claims without re-checking current AWS sources
 
 ## Third-party practice
 
@@ -39,6 +60,13 @@ Well-maintained third-party practice tests can help with:
 - identifying weak service pairs
 
 Choose providers that explain **why** an answer is correct rather than only giving answer letters.
+
+Before paying for or relying on a third-party course, check:
+- when it was last updated
+- whether it explicitly targets **CLF-C02**
+- whether it reflects the current AWS Support-plan transition
+- whether it distinguishes current in-scope and out-of-scope services
+- whether it avoids exam-dump claims
 
 ## Community discussion
 
@@ -52,7 +80,7 @@ Good use:
 Bad use:
 - memorizing recalled live questions
 - assuming reported questions will appear on your exam
-- treating a Reddit comment as more authoritative than AWS documentation
+- treating a Reddit comment, video, blog, or GitHub repo as more authoritative than current AWS documentation
 
 ## Exam integrity
 
@@ -64,4 +92,8 @@ Do not use or contribute:
 
 This repository uses original practice questions designed around the public AWS blueprint.
 
-**Last reviewed:** 2026-09-17
+## Rule of thumb
+
+If a community source disagrees with AWS's current exam guide or scope pages:
+
+> **Follow AWS.**
