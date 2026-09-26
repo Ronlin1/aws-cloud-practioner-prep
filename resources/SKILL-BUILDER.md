@@ -27,13 +27,14 @@ AWS currently separates its exam-prep resources clearly.
 - selected **AWS Cloud Quest** content
 
 ### Available with a Skill Builder subscription
+- **AWS Certification Official Pretests** — full-length assessments aligned to the certification exam; the CLF-C02 pretest has 65 questions and a 90-minute limit
 - **AWS Certification Official Practice Exams** — full-length exam-style practice with scoring and answer feedback
 - enhanced Exam Prep content with additional questions, videos, labs and practice materials
 - additional Cloud Quest roles/content
 
 AWS currently lists the Individual Skill Builder subscription from **$29 USD/month**. Pricing can change, so use the official Certification Prep page as the source of truth.
 
-> Do not assume an Official Practice Exam or every exam-prep activity is free just because it appears in Skill Builder. Check the current access label in your account.
+> Do not assume an Official Pretest, Official Practice Exam, or every exam-prep activity is free just because it appears in Skill Builder. Check the current access label in your account.
 
 ## AWS Cloud Practitioner Essentials
 
@@ -58,7 +59,7 @@ If you have more time:
 
 1. Review the current CLF-C02 exam guide.
 2. Use the free **Official Practice Question Set**.
-3. Take an **Official Pretest** if it is available with your current Skill Builder access.
+3. Take the **Official Pretest** if you have Skill Builder subscription access.
 4. Refresh weak areas.
 5. Use the free Exam Prep course for targeted review.
 6. Take the **Official Practice Exam** if you have subscription access.
@@ -86,7 +87,7 @@ Skill Builder URLs change. If a direct link stops working:
 
 Do not conclude that a resource has disappeared merely because an old direct course URL redirects.
 
-## Official source
+## Official sources
 
-AWS Certification Prep:
-https://aws.amazon.com/certification/certification-prep/
+- AWS Certification Prep: https://aws.amazon.com/certification/certification-prep/
+- AWS Skill Builder digital-training FAQ: https://skillbuilder.aws/support/faq/digital-training
