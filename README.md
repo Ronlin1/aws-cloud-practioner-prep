@@ -4,7 +4,7 @@
 
 ### A focused, modern, exam-first study repository built for clarity, speed, and confidence.
 
-`CLF-C02` · `65 Questions` · `90 Minutes` · `4 Domains` · `Validated 2026-09-18`
+`CLF-C02` · `65 Questions` · `90 Minutes` · `4 Domains` · `Validated 2026-09-26`
 
 </div>
 
@@ -31,7 +31,7 @@ This is an independently maintained community study resource. It is **not affili
 | **Exam in 48 hours** | Start with [`01-48-HOUR-PLAN.md`](01-48-HOUR-PLAN.md), then focus heavily on Domains 2 and 3 |
 | **A few days to a few weeks** | Follow the domain files in order, then drill comparisons and practice questions |
 | **Already studied AWS** | Use [`06-SERVICE-CHEAT-SHEET.md`](06-SERVICE-CHEAT-SHEET.md), [`07-CONFUSING-SERVICES-EXAM-TRAPS.md`](07-CONFUSING-SERVICES-EXAM-TRAPS.md), and the practice sets |
-| **Taking the exam online** | Read [`MY_EXPERIENCE.md`](MY_EXPERIENCE.md) for a privacy-safe personal exam-day checklist and proctoring lessons |
+| **Taking the exam online** | Read [`MY_EXPERIENCE.md`](MY_EXPERIENCE.md) for a privacy-safe personal exam-day checklist and current Pearson-policy links |
 | **Want official links only** | Go straight to [`resources/`](resources/README.md) |
 | **Want modern AWS AI/GenAI too** | Read [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) after the exam-focused material |
 
@@ -95,15 +95,15 @@ Current official format:
 ### 5. Validate
 
 - [`10-OUT-OF-SCOPE-SKIP.md`](10-OUT-OF-SCOPE-SKIP.md) — material not worth deep study for CLF-C02
-- [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md) — what was checked against current AWS sources
+- [`11-DEEP-VALIDATION-AUDIT.md`](11-DEEP-VALIDATION-AUDIT.md) — what was checked against current AWS and Pearson sources
 - [`resources/VALIDATION-NOTES.md`](resources/VALIDATION-NOTES.md) — latest validation notes and methodology
 
 ### 6. Go deeper
 
-- [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) — official AWS source links
-- [`resources/SKILL-BUILDER.md`](resources/SKILL-BUILDER.md) — current AWS learning and exam-prep entry points
+- [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) — official AWS source links plus Pearson VUE exam-day policy links
+- [`resources/SKILL-BUILDER.md`](resources/SKILL-BUILDER.md) — current AWS learning and free-vs-subscription exam-prep entry points
 - [`resources/MODERN-AWS-AI.md`](resources/MODERN-AWS-AI.md) — current AI/GenAI services, clearly separated from CLF-C02 scope
-- [`resources/COMMUNITY-RESOURCES.md`](resources/COMMUNITY-RESOURCES.md) — vetted supplemental community material
+- [`resources/COMMUNITY-RESOURCES.md`](resources/COMMUNITY-RESOURCES.md) — supplemental community resources with freshness warnings
 
 ---
 
@@ -175,6 +175,8 @@ This repository is intended to be safe to share publicly.
 - Corrections should cite official AWS documentation wherever possible.
 - Historical Git commits can preserve old text and public commit-author metadata even after the latest branch is cleaned; see [`DISCLAIMER.md`](DISCLAIMER.md) for that limitation.
 
+The 2026-09-26 privacy review found no current-branch secret or sensitive exam PII. Historical Git content is a separate limitation and has **not** been destructively rewritten.
+
 ---
 
 ## ✅ Source-of-truth hierarchy
@@ -187,9 +189,10 @@ When sources disagree, use this order:
 4. Official In-Scope / Out-of-Scope service lists
 5. Current AWS service documentation
 6. AWS Skill Builder / Certification Prep
-7. Community material only as supplemental guidance
+7. Pearson VUE AWS OnVUE policy for online-testing rules
+8. Community material only as supplemental guidance
 
-The AWS in-scope and out-of-scope lists are explicitly **non-exhaustive and subject to change**, so the current task statements remain the most important reference.
+The AWS in-scope and out-of-scope lists are explicitly **non-exhaustive and subject to change**, so the current task statements remain the most important exam-content reference.
 
 See [`resources/OFFICIAL-AWS.md`](resources/OFFICIAL-AWS.md) for the validated links.
 
@@ -221,6 +224,6 @@ You need to understand the cloud fundamentals, recognize the major services, dis
 
 ---
 
-**Last deep validation:** 2026-09-18  
+**Last full validation:** 2026-09-26  
 **Public-sharing/privacy review:** 2026-09-26  
 **Maintained independently. Not affiliated with Amazon Web Services.**
