@@ -12,6 +12,7 @@ Good contributions include:
 - adding original practice questions that map to public task statements
 - clarifying service comparisons
 - improving accessibility or navigation
+- improving exam-day guidance without exposing private candidate information
 
 ## Source standard
 
@@ -38,6 +39,8 @@ Do not submit:
 - exam dumps
 - recalled live-exam questions
 - leaked exam content
+- reconstructed live exam questions
+- screenshots or recordings from a live exam
 - material advertised as “real current exam questions”
 
 ## Keep exam scope clean
@@ -57,6 +60,38 @@ Prefer examples such as:
 - `Department=Engineering`
 - `Environment=Production`
 
+## Public-sharing safety checklist
+
+Before committing anything copied from an exam booking, email, screenshot, terminal, cloud console, or personal note, check that it does **not** contain:
+
+- full names when they are not necessary
+- personal email addresses
+- phone numbers
+- home, work, school, hostel, or testing-location addresses
+- passport, national ID, driver's-license, or other identity-document numbers
+- photographs/scans of identity documents
+- candidate IDs, registration IDs, order numbers, appointment IDs, or voucher codes
+- Pearson VUE or other exam-launch links containing private tokens
+- QR codes, barcodes, or verification codes
+- score-report identifiers or private certification-account details
+- AWS account IDs
+- access keys, secret keys, session tokens, passwords, API keys, private keys, certificates, or connection strings
+- private repository, dashboard, console, storage, or signed URLs
+- employer-, school-, client-, or project-specific information that is unnecessary for the learning example
+- screenshots that may contain notifications, browser tabs, usernames, file paths, or metadata outside the intended content
+
+If a personal experience is useful, keep only the learning value. Generalize the location, remove identifiers, and describe the event without exposing booking details.
+
+## Exam-experience contributions
+
+Personal exam-day experiences are welcome when they help other candidates prepare. They should:
+
+- focus on setup, study strategy, accessibility, time management, or general proctoring lessons
+- clearly state that procedures can change
+- direct readers to current official instructions for authoritative rules
+- avoid publishing exact private appointment details
+- avoid sharing or reconstructing live exam questions
+
 ## Before opening a change
 
 Please check:
@@ -64,6 +99,8 @@ Please check:
 - the service name is current
 - the change does not blur exam scope with broader AWS learning
 - no PII or private data is included
+- no credential, token, secret, or private key is included
+- no copied live-exam content is included
 - no `TODO` or unfinished placeholder remains
 
 Thanks for helping learners study from current, trustworthy material.
