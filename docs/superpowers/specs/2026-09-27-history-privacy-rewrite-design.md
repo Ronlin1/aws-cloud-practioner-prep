@@ -28,7 +28,7 @@ This is a history-sanitization operation, not a content redesign.
 - Changing current study content, practice questions, README wording, or resource material.
 - Deleting merged pull requests or issue discussions.
 - Changing repository visibility.
-- Flattening the repository to a single root commit unless selective rewriting proves infeasible.
+- Flattening the repository to a single root commit unless selective rewriting proves infeasible and a new design is explicitly approved.
 
 ## Privacy target
 
@@ -40,11 +40,20 @@ The concrete private strings being removed are intentionally not repeated in thi
 
 ## Current repository state
 
-At design time, `main` points to the merged validation state from PR #5. The repository also retains several older feature branches created during the public refresh, practice validation, exam-experience publication, and validation-fix work.
+At design time, `main` points to commit `33d64b3256d2919f2c1982dbb3f09046f73df14d`, the merged validation state from PR #5.
 
-Those normal branch refs must be considered together because leaving one branch on the old graph can keep historical objects reachable.
+Normal branches currently relevant to the rewrite are:
 
-A separate design branch contains this document. It must either be recreated from the rewritten `main` or removed after the rewrite so that it does not retain old ancestry.
+- `main`
+- `practice-validation-2026-09-18`
+- `public-exam-experience-2026-09-26`
+- `public-refresh-2026-09-17`
+- `repo-validation-fixes-2026-09-26`
+- `history-privacy-rewrite-spec-2026-09-27`
+
+Those refs must be considered together because leaving any one of them on the old graph can keep historical objects reachable.
+
+The design branch itself starts from the pre-rewrite `main`, so after the rewrite it must be recreated from the rewritten graph or removed.
 
 ## Chosen approach
 
@@ -54,8 +63,8 @@ The rewrite starts at the earliest commit whose tree contains one of the identif
 
 1. Recreate the affected commit with sanitized file content.
 2. Recreate every descendant commit whose parent SHA changes.
-3. Preserve each commit's message where practical.
-4. Preserve merge-parent structure where practical.
+3. Preserve each commit's message where supported by the available write interface.
+4. Preserve merge-parent order and topology.
 5. Reuse unchanged trees whenever the tree itself is already privacy-safe.
 6. Preserve normal GitHub author identity rather than attempting anonymization.
 7. Force-move each affected normal branch ref to its rewritten equivalent only after the complete rewritten graph has been built and verified.
@@ -70,48 +79,51 @@ Before writing any replacement commit:
 
 - enumerate all normal branch refs;
 - capture each branch tip SHA;
-- walk the reachable commit graph far enough to locate the earliest offending tree;
+- capture the current `main` tree SHA;
+- walk the reachable commit graph to locate the earliest offending tree;
 - identify every commit/tree containing one of the target personal/project labels;
-- record old-to-new SHA mappings during reconstruction.
+- build an ordered old-to-new SHA mapping during reconstruction.
 
 ### 2. Sanitize offending trees
 
 For commits whose trees contain target references:
 
 - fetch the affected file content;
-- replace only the identifying examples with generic equivalents;
-- remove historical internal planning text that unnecessarily records those personal examples where replacement would be awkward;
-- do not alter unrelated educational content.
+- replace only the identifying labels with the approved generic equivalents;
+- in historical planning/specification files, substitute the identifying examples rather than deleting unrelated planning content;
+- preserve surrounding educational and process content unless it independently contains another confirmed privacy issue;
+- do not alter unrelated files.
 
 ### 3. Recreate descendants
 
 For every descendant of a rewritten commit:
 
 - keep the same tree if that tree is already clean;
-- create a new commit pointing to the rewritten parent SHA(s);
+- create a new commit pointing to the rewritten parent SHA or parent SHAs;
 - preserve commit message and parent order;
 - preserve merge topology rather than linearizing merged work.
 
 The GitHub write interface used here does not expose exact low-level preservation of all original author dates, committer dates, GPG signatures, or verification state. Rewritten commits may therefore show new metadata/signature status even when their tree and message match the original.
 
-### 4. Verification before ref movement
+## Verification before ref movement
 
 Do not move `main` or any other normal branch until all of the following pass:
 
-- rewritten `main` tree is identical to the pre-rewrite `main` tree;
+- rewritten `main` tree SHA equals the pre-rewrite `main` tree SHA;
 - rewritten branch tips represent the expected branch content;
 - target personal/project labels are absent from all rewritten reachable trees;
 - common secret/credential scans remain clean;
-- merge structure has been preserved where intended;
-- every old branch tip has a known rewritten equivalent.
+- merge topology has been preserved where intended;
+- every affected old branch tip has a known rewritten equivalent;
+- the design branch has a defined post-rewrite disposition.
 
-### 5. Force-move branch refs
+## Force-move branch refs
 
 Once verification passes:
 
 - force-update `main` to the rewritten main tip;
 - force-update each affected historical feature branch to its rewritten tip;
-- recreate or remove the temporary design branch so it no longer points into the old ancestry.
+- recreate the design branch from the rewritten graph or remove it.
 
 No ref is force-moved until the complete mapping and verification evidence exist.
 
@@ -133,22 +145,22 @@ This design does not claim that force-moving branches alone guarantees immediate
 Before any force update:
 
 - record all current branch names and tip SHAs;
-- record current `main` tree SHA;
+- record the current `main` tree SHA;
 - retain the complete old-to-new mapping;
-- do not delete old branches until rewritten equivalents are verified.
+- do not delete or repoint any old branch until rewritten equivalents are verified.
 
 If a branch move produces an unexpected result before old objects are purged, it can be pointed back to its recorded original tip.
 
-Once GitHub Support or garbage collection permanently removes unreachable old objects, rollback to those historical objects may no longer be possible. Therefore destructive purge requests happen only after rewritten refs and current content are verified.
+Once GitHub Support or garbage collection permanently removes unreachable old objects, rollback to those historical objects may no longer be possible. Therefore any final purge request happens only after rewritten refs and current content are verified.
 
 ## Verification checklist
 
 After branch refs move:
 
-- [ ] Fetch `main` and confirm its tree matches the pre-rewrite tree.
+- [ ] Fetch `main` and confirm its tree SHA matches the pre-rewrite tree SHA.
 - [ ] Confirm README and all current study/resource files are unchanged.
 - [ ] Search current branch for known personal/project labels.
-- [ ] Search rewritten historical branches for known personal/project labels.
+- [ ] Search every rewritten historical branch for known personal/project labels.
 - [ ] Search for common credential markers and private-key headers.
 - [ ] Confirm all expected branch names still resolve.
 - [ ] Confirm merged PRs still render sensibly.
@@ -160,7 +172,7 @@ After branch refs move:
 
 The operation is successful when:
 
-1. Current `main` content is unchanged.
+1. Current `main` content is unchanged, proven by identical tree SHA before and after the rewrite.
 2. Normal branch history no longer exposes the identified personal/project references.
 3. Normal GitHub author attribution remains intact.
 4. All intended branch refs point to the rewritten clean graph.
