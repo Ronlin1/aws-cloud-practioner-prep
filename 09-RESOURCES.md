@@ -23,7 +23,9 @@ The detailed resource library now lives in [`resources/`](resources/README.md).
 Current AWS Certification Prep guidance distinguishes:
 - **free** Official Practice Question Sets — 20 questions
 - **free** Exam Prep digital courses — about 2 hours
-- **subscription** Official Practice Exams and enhanced practice/lab content
+- **subscription** Official Pretests and Official Practice Exams, plus enhanced practice/lab content
+
+For CLF-C02, the current Official Pretest is a **65-question, 90-minute** subscription assessment aligned to the exam.
 
 Do not assume every official Skill Builder resource is free. Check the current access label in your account.
 
@@ -77,10 +79,11 @@ Do not use exam dumps or material claiming to reproduce live exam questions.
 If your exam is close, prioritize:
 1. official exam guide
 2. Domains 2 and 3
-3. Official Practice Question Set
-4. confusing-service comparisons
-5. timed practice
-6. weak-area repair
-7. Official Practice Exam if you have subscription access
+3. free Official Practice Question Set
+4. Official Pretest if you have subscription access
+5. confusing-service comparisons
+6. timed practice
+7. weak-area repair
+8. Official Practice Exam if you have subscription access
 
 Do not spend significant time on implementation-heavy labs that AWS explicitly places outside the CLF-C02 target candidate's expected tasks.
