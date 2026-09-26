@@ -10,17 +10,18 @@ Use resources in this order when facts conflict:
 2. **Official in-scope / out-of-scope service lists**
 3. **Current AWS service documentation**
 4. **AWS Skill Builder and Certification Prep**
-5. **Community material** only as a supplement
+5. **Pearson VUE AWS OnVUE policy for online-testing requirements**
+6. **Community material** only as a supplement
 
 ## Files
 
 | File | Use it for |
 |---|---|
-| [`OFFICIAL-AWS.md`](OFFICIAL-AWS.md) | Current exam guide, domain pages, scope, frameworks, IAM, pricing and Support links |
-| [`SKILL-BUILDER.md`](SKILL-BUILDER.md) | Official AWS training, practice-question and exam-prep entry points |
+| [`OFFICIAL-AWS.md`](OFFICIAL-AWS.md) | Current exam guide, domain pages, scope, frameworks, IAM, pricing, Support, and online-exam policy links |
+| [`SKILL-BUILDER.md`](SKILL-BUILDER.md) | Official AWS training, free-vs-subscription practice resources, and exam-prep entry points |
 | [`MODERN-AWS-AI.md`](MODERN-AWS-AI.md) | CLF-C02 AI/ML scope plus clearly separated modern Bedrock/GenAI/agentic-AI learning |
-| [`COMMUNITY-RESOURCES.md`](COMMUNITY-RESOURCES.md) | Vetted supplemental GitHub/community resources |
-| [`VALIDATION-NOTES.md`](VALIDATION-NOTES.md) | Validation date, methodology, transitions and caveats |
+| [`COMMUNITY-RESOURCES.md`](COMMUNITY-RESOURCES.md) | Supplemental community resources with freshness labels |
+| [`VALIDATION-NOTES.md`](VALIDATION-NOTES.md) | Validation date, methodology, transitions, privacy audit, and caveats |
 
 ## Scope labels used here
 
@@ -30,4 +31,4 @@ Use resources in this order when facts conflict:
 
 > AWS states that its in-scope and out-of-scope service lists are non-exhaustive and subject to change. Re-check the official exam guide before your exam if significant time has passed since this repository's last validation.
 
-**Last validated:** 2026-09-17
+**Last full validation:** 2026-09-26
