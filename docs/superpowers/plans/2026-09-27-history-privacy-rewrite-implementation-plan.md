@@ -17,6 +17,7 @@
 - The pre-rewrite `main` tree SHA is `c2ce0dcf9f1b617790b373cf072bf95edd082d4f`; rewritten `main` must use this exact tree SHA.
 - Do not repeat the private target labels in new repository files, commit messages, branch names, or public audit notes.
 - Keep target values only in execution memory / private tool state; if a local helper needs them, pass them as environment variables rather than writing them into the repository.
+- The approved generic replacement values are `Project=WebApp` and `Department=Engineering`.
 - Preserve commit messages and merge-parent order where supported by the GitHub write interface.
 - Accept that rewritten commits can have new timestamps/signature state because the available GitHub commit-creation interface does not expose exact preservation of all original metadata.
 - No existing branch ref may move until the complete replacement graph and old-to-new mapping pass verification.
@@ -155,9 +156,9 @@ Expected: fetched content contains at least one target label in each inventoried
 - [ ] **Step 2: Produce sanitized file content in memory**
 
 Replacement rules:
-- replace only the approved identifying project label with the generic project example already used on current `main`;
-- replace only the approved identifying department label with the generic department example already used on current `main`;
-- in historical planning/specification text, substitute the generic examples rather than deleting unrelated process content.
+- replace the approved identifying project label with exactly `Project=WebApp`;
+- replace the approved identifying department label with exactly `Department=Engineering`;
+- in historical planning/specification text, substitute those same generic examples rather than deleting unrelated process content.
 
 - [ ] **Step 3: Assert the sanitized content contains neither target label**
 
@@ -171,7 +172,7 @@ Use the original tree as `base_tree_sha` and replace only inventoried paths. Do 
 
 Assertions:
 - target labels absent;
-- generic replacements present where appropriate;
+- `Project=WebApp` / `Department=Engineering` present where their corresponding identifying examples existed;
 - unrelated surrounding content unchanged;
 - file count/modes unchanged except where GitHub's tree API necessarily reuses existing entries.
 
@@ -206,13 +207,16 @@ For each commit:
 - parent = `commit_map[old_parent]` if parent was rewritten, else original parent;
 - message = original commit message.
 
-After creation, fetch the new commit and verify its tree, parent, and message.
+After creation, fetch the new commit and verify its tree, parent, message, and that normal GitHub attribution resolves to the authenticated `Ronlin1` identity when GitHub exposes an author login.
 
 - [ ] **Step 3: Recreate each merge commit with ordered rewritten parents**
 
 For each original merge parent in order, substitute `commit_map[parent]` when rewritten; otherwise preserve the original SHA.
 
-Assertion: new merge has the same parent count and equivalent parent order.
+Assertions:
+- new merge has the same parent count and equivalent parent order;
+- commit message matches the original;
+- normal GitHub attribution remains associated with `Ronlin1` when GitHub exposes an author login.
 
 - [ ] **Step 4: Record every `old_commit_sha -> new_commit_sha` immediately**
 
@@ -252,13 +256,14 @@ This is the strongest proof that current public content remains byte-for-byte un
 
 Expected: identical tree SHA for branches whose tip content was already clean; if a historical branch tip itself contained target labels, its rewritten tree must differ only by the approved substitutions.
 
-- [ ] **Step 3: Verify every recreated commit's parent topology**
+- [ ] **Step 3: Verify every recreated commit's parent topology and attribution**
 
 For each mapping:
 - same parent count;
 - same parent order after old-to-new substitution;
 - same commit message;
-- expected tree SHA.
+- expected tree SHA;
+- GitHub author login is `Ronlin1` when the API exposes a linked author.
 
 - [ ] **Step 4: Verify privacy across all rewritten reachable trees**
 
@@ -406,6 +411,7 @@ Do not call this task complete without all of the following:
 - old-to-new tree and commit mappings kept outside the repo;
 - rewritten `main` tree exactly equal to `c2ce0dcf9f1b617790b373cf072bf95edd082d4f`;
 - zero target-label matches in rewritten normal-branch history;
+- normal GitHub attribution still associated with `Ronlin1` where the API exposes linked authors;
 - successful current-branch secret/PII scan;
 - all expected branch refs moved and verified;
 - explicit PR-ref/old-object reachability result;
